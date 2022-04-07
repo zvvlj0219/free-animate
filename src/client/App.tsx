@@ -1,19 +1,24 @@
 import { useCallback, useEffect, useState } from 'react'
 
 // sample
-import axios from 'axios'
+import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios'
+
 const sample = async () => {
-  const { data } = await axios.get('/api')
+  type Data = {
+    result: string
+  }
+  const response:AxiosResponse<Data> = await axios.get('/api')
+  console.log(response)
+  const { data } = response
   console.log(data.result)
 }
 
-const App: React.VFC = () => {
-  useEffect(() => { sample()},[])
-  return (
+sample()
+
+const App: React.VFC = () => (
     <div className='app'>
       <h1>hello world</h1>
     </div>
   )
-}
 
 export default App
