@@ -1,36 +1,40 @@
-import express from 'express'
+import express, { Request, Response } from 'express'
+import dotenv from 'dotenv'
 import cors from 'cors'
 import path from 'path'
 
+// load .env
+dotenv.config()
+
+// init app
 const app = express()
+
+// middleware
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(cors())
+const corsOptions = {
+  origin: '*',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
+  allowedHeaders: ['Content-Type']
+}
+app.use(cors(corsOptions))
 
-app.get('/api', (req: express.Request, res: express.Response) => {
-  res.send({ result: 'youtube' })
-})
+app.get('/api', (req: Request, res: Response) => res.send({ result: 'ok' }))
 
 // handle production
 if (process.env.NODE_ENV === 'production') {
   // static folder
   app.use(express.static(path.resolve(__dirname)))
   // handle spa
-  app.get('/', (req, res) => {
-    console.log(__dirname)
-    res.sendFile(path.resolve(__dirname, '/index.html'))
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './index.html'))
   })
 }
 
-app.listen(5000, () => {
-  console.log(
-    `NODE_ENV is ${
-      process.env.NODE_ENV === 'production'
-        ? 'production'
-        : 'development'
-    }
-    server running port 5000`
-  )
+const port = process.env.PORT || 5000
+app.listen(port, () => {
+  console.log(`NODE_ENV is ${String(process.env.NODE_ENV)}`)
+  console.log(`server running port 5000 at http://localhost:${port}`)
 })
-
-// $set NODE_ENV=production
