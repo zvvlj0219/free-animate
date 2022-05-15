@@ -7,12 +7,12 @@ import App from './App'
 import './scss/index.scss'
 
 ReactDom.render(
-  <ErrorProvider>
-    <BrowserRouter>
-      <ErrorBoundary>
-        <App />
-      </ErrorBoundary>
-    </BrowserRouter>
-  </ErrorProvider>,
-  document.getElementById('root')
+    <ErrorProvider>
+        <BrowserRouter>
+            <ErrorBoundary>
+                <App />
+            </ErrorBoundary>
+        </BrowserRouter>
+    </ErrorProvider>,
+    document.getElementById('root')
 )

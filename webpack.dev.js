@@ -15,6 +15,7 @@ module.exports = merge(common, {
     static: {
       directory: path.join(__dirname, "dist"),
     },
+    historyApiFallback: true,    
     port: 3000,
     host: "localhost",
     proxy: {
