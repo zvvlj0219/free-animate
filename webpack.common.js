@@ -1,8 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
 
 module.exports = {
   entry: {
@@ -45,7 +45,8 @@ module.exports = {
         test: [/\.ts$/, /\.tsx$/],
         use: [
           {
-            loader: "babel-loader"
+            loader: "babel-loader",
+            options: { plugins: ['react-refresh/babel'] }
           }
         ]
       },
@@ -82,8 +83,8 @@ module.exports = {
     ]
   },
   plugins: [
-    // clean up output directory before build
-    new CleanWebpackPlugin(),
+    new ReactRefreshWebpackPlugin(),
+    new CleanWebpackPlugin(), // clean up output directory before build
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "public/index.html"),
     }),

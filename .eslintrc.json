@@ -70,6 +70,7 @@
               "unnamedComponents": "arrow-function"
             }
         ],
+        "camelcase": "off",
         "semi": ["error", "never"],
         "no-console": "off"
     }

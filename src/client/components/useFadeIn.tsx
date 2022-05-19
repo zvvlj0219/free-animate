@@ -36,7 +36,7 @@ const useFadeIn = ({
       opacity: 0
     })
   
-    const animation = useMemo(
+    const nodeStyle = useMemo(
       () => ({
         width: '100%',
         transition: `all 1s ease ${duration ? duration : 0.1}s`,
@@ -77,7 +77,7 @@ const useFadeIn = ({
       return () => document.removeEventListener('scroll', handleScroll)
     }, [])
   
-    return animation
+    return nodeStyle
 }
 
 export default useFadeIn

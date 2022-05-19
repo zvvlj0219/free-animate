@@ -20,31 +20,31 @@ const sampleContainerStyle = {
 // ↑↑↑↑↑sample
 
 const FadeIn = () => {
-    const ref_1 = useRef<HTMLDivElement>(null)
-    const ref_2 = useRef<HTMLDivElement>(null)
-    const ref_3 = useRef<HTMLDivElement>(null)
+    const ref1 = useRef<HTMLDivElement>(null)
+    const ref2 = useRef<HTMLDivElement>(null)
+    const ref3 = useRef<HTMLDivElement>(null)
 
     const [isDownScroll, changeDirection] = useState<boolean>(true)
     const [prev_position, reinitPosition] = useState<number>(0)
   
-    const fadeAnimationStyle_1 = useFadeIn({
+    const fadeAnimationStyle1 = useFadeIn({
         isDownScroll,
         containerElm: 'main_scroll',
-        ref: ref_1,
+        ref: ref1,
         translate: { x: 100,y: 0 },
         duration: 0.1, 
     })
-    const fadeAnimationStyle_2 = useFadeIn({
+    const fadeAnimationStyle2 = useFadeIn({
         isDownScroll,
         containerElm: 'main_scroll',
-        ref: ref_1,
+        ref: ref2,
         translate: { x: 300,y: 0 },
         duration: 0.3, 
     })
-    const fadeAnimationStyle_3 = useFadeIn({
+    const fadeAnimationStyle3 = useFadeIn({
         isDownScroll,
         containerElm: 'main_scroll',
-        ref: ref_1,
+        ref: ref3,
         translate: { x: 100,y: 0 },
         duration: 0.2, 
     })
@@ -62,7 +62,7 @@ const FadeIn = () => {
     useEffect(() => {
         document.addEventListener('scroll', onScroll)
         return () => document.removeEventListener('scroll', onScroll)
-    }, [])
+    }, [onScroll])
   
     return (
         <div className='fade_in' id='main_scroll' style={sampleContainerStyle}>
@@ -77,22 +77,22 @@ const FadeIn = () => {
                 <img src={vue} alt='' style={sampleImgStyle} />
             </div>
             <div className='content_3'
-                ref={ref_1}
-                style={fadeAnimationStyle_1}
+                ref={ref1}
+                style={fadeAnimationStyle1}
             >
                 <p className='text fadeIn'>content_3</p>
                 <img src={node} className='fadeIn' alt='' style={sampleImgStyle} />
             </div>
             <div className='content_4'
-                ref={ref_2}
-                style={fadeAnimationStyle_2}
+                ref={ref2}
+                style={fadeAnimationStyle2}
             >      
                 <p className='text fadeIn'>content_4</p>
                 <img src={ts} className='fadeIn' alt='' style={sampleImgStyle} />
             </div>
             <div className='content_5'
-                ref={ref_3}
-                style={fadeAnimationStyle_3}
+                ref={ref3}
+                style={fadeAnimationStyle3}
             >      
                 <p className='text fadeIn'>content_4</p>
                 <img src={js} className='fadeIn' alt='' style={sampleImgStyle} />
