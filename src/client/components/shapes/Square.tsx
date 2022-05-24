@@ -1,14 +1,10 @@
 type Props = {
     color: string
     opacity: number
-    margin?: string
+    margin: string
 }
 
-export const Square_sm = ({
-    color,
-    opacity,
-    margin = '',
-}: Props) => {
+export const SquareSmallIcon = ({ color, opacity, margin = '' }: Props) => {
     const iconStyle = {
         backgroundColor: color,
         opacity
@@ -16,7 +12,7 @@ export const Square_sm = ({
 
     return (
         <div
-            className='square_small'
+            className="square_small"
             style={{
                 margin: `${margin}`
             }}
@@ -32,11 +28,7 @@ export const Square_sm = ({
     )
 }
 
-export const Square_md = ({
-    color,
-    opacity,
-    margin = '',
-}: Props) => {
+export const SquareMediumIcon = ({ color, opacity, margin = '' }: Props) => {
     const iconStyle = {
         backgroundColor: color,
         opacity
@@ -44,7 +36,7 @@ export const Square_md = ({
 
     return (
         <div
-            className='square_medium'
+            className="square_medium"
             style={{
                 margin: `${margin}`
             }}
@@ -60,11 +52,7 @@ export const Square_md = ({
     )
 }
 
-export const Square_lg = ({
-    color,
-    opacity,
-    margin = '',
-}: Props) => {
+export const SquareLargeIcon = ({ color, opacity, margin = '' }: Props) => {
     const iconStyle = {
         backgroundColor: color,
         opacity
@@ -72,7 +60,7 @@ export const Square_lg = ({
 
     return (
         <div
-            className='square_large'
+            className="square_large"
             style={{
                 margin: `${margin}`
             }}

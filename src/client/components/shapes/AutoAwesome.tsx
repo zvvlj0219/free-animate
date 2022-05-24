@@ -3,22 +3,22 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
 type Props = {
     color: string
     opacity: number
-    margin?: string
+    margin: string
 }
 
-export const AutoAwesome_sm = ({
+export const AutoAwesomeSmallIcon = ({
     color,
     opacity,
-    margin = '',
+    margin = ''
 }: Props) => {
     const iconStyle = {
         color,
         opacity
-    }   
+    }
 
     return (
         <div
-            className='autoawesome_small'
+            className="autoawesome_small"
             style={{
                 margin: `${margin}`
             }}
@@ -33,19 +33,19 @@ export const AutoAwesome_sm = ({
     )
 }
 
-export const AutoAwesome_md = ({
+export const AutoAwesomeMediumIcon = ({
     color,
     opacity,
-    margin = '',
+    margin = ''
 }: Props) => {
     const iconStyle = {
         color,
         opacity
-    }   
+    }
 
     return (
         <div
-            className='autoawesome_medium'
+            className="autoawesome_medium"
             style={{
                 margin: `${margin}`
             }}
@@ -60,19 +60,19 @@ export const AutoAwesome_md = ({
     )
 }
 
-export const AutoAwesome_lg = ({
+export const AutoAwesomeLargeIcon = ({
     color,
     opacity,
-    margin = '',
+    margin = ''
 }: Props) => {
     const iconStyle = {
         color,
         opacity
-    }   
+    }
 
     return (
         <div
-            className='autoawesome_large'
+            className="autoawesome_large"
             style={{
                 margin: `${margin}`
             }}

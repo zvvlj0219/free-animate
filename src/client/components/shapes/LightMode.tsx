@@ -3,14 +3,10 @@ import LightModeIcon from '@mui/icons-material/LightMode'
 type Props = {
     color: string
     opacity: number
-    margin?: string
+    margin: string
 }
 
-export const LightMode_sm = ({
-    color,
-    opacity,
-    margin = '',
-}: Props) => {
+export const LightModeSmallIcon = ({ color, opacity, margin = '' }: Props) => {
     const iconStyle = {
         color,
         opacity
@@ -18,7 +14,7 @@ export const LightMode_sm = ({
 
     return (
         <div
-            className='lightmode_small'
+            className="lightmode_small"
             style={{
                 margin: `${margin}`
             }}
@@ -33,11 +29,7 @@ export const LightMode_sm = ({
     )
 }
 
-export const LightMode_md = ({
-    color,
-    opacity,
-    margin = '',
-}: Props) => {
+export const LightModeMediumIcon = ({ color, opacity, margin = '' }: Props) => {
     const iconStyle = {
         color,
         opacity
@@ -45,7 +37,7 @@ export const LightMode_md = ({
 
     return (
         <div
-            className='lightmode_medium'
+            className="lightmode_medium"
             style={{
                 margin: `${margin}`
             }}
@@ -60,11 +52,7 @@ export const LightMode_md = ({
     )
 }
 
-export const LightMode_lg = ({
-    color,
-    opacity,
-    margin = '',
-}: Props) => {
+export const LightModeLargeIcon = ({ color, opacity, margin = '' }: Props) => {
     const iconStyle = {
         color,
         opacity
@@ -72,7 +60,7 @@ export const LightMode_lg = ({
 
     return (
         <div
-            className='lightmode_large'
+            className="lightmode_large"
             style={{
                 margin: `${margin}`
             }}
