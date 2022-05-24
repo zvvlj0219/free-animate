@@ -3,14 +3,10 @@ import CloudIcon from '@mui/icons-material/Cloud'
 type Props = {
     color: string
     opacity: number
-    margin?: string
+    margin: string
 }
 
-export const Cloud_sm = ({
-    color,
-    opacity,
-    margin = '',
-}: Props) => {
+export const CloudSmallIcon = ({ color, opacity, margin = '' }: Props) => {
     const iconStyle = {
         color,
         opacity
@@ -18,7 +14,7 @@ export const Cloud_sm = ({
 
     return (
         <div
-            className='cloud_small'
+            className="cloud_small"
             style={{
                 margin: `${margin}`
             }}
@@ -33,11 +29,7 @@ export const Cloud_sm = ({
     )
 }
 
-export const Cloud_md = ({
-    color,
-    opacity,
-    margin = '',
-}: Props) => {
+export const CloudMediumIcon = ({ color, opacity, margin = '' }: Props) => {
     const iconStyle = {
         color,
         opacity
@@ -45,7 +37,7 @@ export const Cloud_md = ({
 
     return (
         <div
-            className='cloud_medium'
+            className="cloud_medium"
             style={{
                 margin: `${margin}`
             }}
@@ -60,11 +52,7 @@ export const Cloud_md = ({
     )
 }
 
-export const Cloud_lg = ({
-    color,
-    opacity,
-    margin = '',
-}: Props) => {
+export const CloudLargeIcon = ({ color, opacity, margin = '' }: Props) => {
     const iconStyle = {
         color,
         opacity
@@ -72,7 +60,7 @@ export const Cloud_lg = ({
 
     return (
         <div
-            className='cloud_large'
+            className="cloud_large"
             style={{
                 margin: `${margin}`
             }}

@@ -8,13 +8,9 @@ interface Image {
     src: string
 }
 
-interface Style {
+interface Style {}
 
-}
-
-interface Theme {
-
-}
+interface Theme {}
 
 export type Props = {
     textData: Text[]

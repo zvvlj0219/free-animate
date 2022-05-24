@@ -3,14 +3,10 @@ import GradeIcon from '@mui/icons-material/Grade'
 type Props = {
     color: string
     opacity: number
-    margin?: string
+    margin: string
 }
 
-export const Grade_sm = ({
-    color,
-    opacity,
-    margin = '',
-}: Props) => {
+export const GradeSmallIcon = ({ color, opacity, margin = '' }: Props) => {
     const iconStyle = {
         color,
         opacity
@@ -18,7 +14,7 @@ export const Grade_sm = ({
 
     return (
         <div
-            className='grade_small'
+            className="grade_small"
             style={{
                 margin: `${margin}`
             }}
@@ -33,11 +29,7 @@ export const Grade_sm = ({
     )
 }
 
-export const Grade_md = ({
-    color,
-    opacity,
-    margin = '',
-}: Props) => {
+export const GradeMediumIcon = ({ color, opacity, margin = '' }: Props) => {
     const iconStyle = {
         color,
         opacity
@@ -45,7 +37,7 @@ export const Grade_md = ({
 
     return (
         <div
-            className='grade_medium'
+            className="grade_medium"
             style={{
                 margin: `${margin}`
             }}
@@ -60,11 +52,7 @@ export const Grade_md = ({
     )
 }
 
-export const Grade_lg = ({
-    color,
-    opacity,
-    margin = '',
-}: Props) => {
+export const GradeLargeIcon = ({ color, opacity, margin = '' }: Props) => {
     const iconStyle = {
         color,
         opacity
@@ -72,7 +60,7 @@ export const Grade_lg = ({
 
     return (
         <div
-            className='grade_large'
+            className="grade_large"
             style={{
                 margin: `${margin}`
             }}

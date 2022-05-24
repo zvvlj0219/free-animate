@@ -3,14 +3,10 @@ import AcUnitIcon from '@mui/icons-material/AcUnit'
 type Props = {
     color: string
     opacity: number
-    margin?: string
+    margin: string
 }
 
-export const AcUnit_sm = ({
-    color,
-    opacity,
-    margin = '',
-}: Props) => {
+export const AcUnitSmallIcon = ({ color, opacity, margin = '' }: Props) => {
     const iconStyle = {
         color,
         opacity
@@ -18,7 +14,7 @@ export const AcUnit_sm = ({
 
     return (
         <div
-            className='acunit_small'
+            className="acunit_small"
             style={{
                 margin: `${margin}`
             }}
@@ -33,11 +29,7 @@ export const AcUnit_sm = ({
     )
 }
 
-export const AcUnit_md = ({
-    color,
-    opacity,
-    margin = '',
-}: Props) => {
+export const AcUnitMediumIcon = ({ color, opacity, margin = '' }: Props) => {
     const iconStyle = {
         color,
         opacity
@@ -45,7 +37,7 @@ export const AcUnit_md = ({
 
     return (
         <div
-            className='acunit_medium'
+            className="acunit_medium"
             style={{
                 margin: `${margin}`
             }}
@@ -59,11 +51,7 @@ export const AcUnit_md = ({
         </div>
     )
 }
-export const AcUnit_lg = ({
-    color,
-    opacity,
-    margin = '',
-}: Props) => {
+export const AcUnitLargeIcon = ({ color, opacity, margin = '' }: Props) => {
     const iconStyle = {
         color,
         opacity
@@ -71,7 +59,7 @@ export const AcUnit_lg = ({
 
     return (
         <div
-            className='acunit_large'
+            className="acunit_large"
             style={{
                 margin: `${margin}`
             }}

@@ -1,14 +1,10 @@
 type Props = {
     color: string
     opacity: number
-    margin?: string
+    margin: string
 }
 
-export const Rectangle_sm = ({
-    color,
-    opacity,
-    margin = '',
-}: Props) => {
+export const RectangleSmallIcon = ({ color, opacity, margin = '' }: Props) => {
     const iconStyle = {
         backgroundColor: color,
         opacity
@@ -16,7 +12,7 @@ export const Rectangle_sm = ({
 
     return (
         <div
-            className='rectangle_small'
+            className="rectangle_small"
             style={{
                 margin: `${margin}`
             }}
@@ -32,11 +28,7 @@ export const Rectangle_sm = ({
     )
 }
 
-export const Rectangle_md = ({
-    color,
-    opacity,
-    margin = '',
-}: Props) => {
+export const RectangleMediumIcon = ({ color, opacity, margin = '' }: Props) => {
     const iconStyle = {
         backgroundColor: color,
         opacity
@@ -44,7 +36,7 @@ export const Rectangle_md = ({
 
     return (
         <div
-            className='rectangle_medium'
+            className="rectangle_medium"
             style={{
                 margin: `${margin}`
             }}
@@ -60,11 +52,7 @@ export const Rectangle_md = ({
     )
 }
 
-export const Rectangle_lg = ({
-    color,
-    opacity,
-    margin = '',
-}: Props) => {
+export const RectangleLargeIcon = ({ color, opacity, margin = '' }: Props) => {
     const iconStyle = {
         backgroundColor: color,
         opacity
@@ -72,7 +60,7 @@ export const Rectangle_lg = ({
 
     return (
         <div
-            className='rectangle_large'
+            className="rectangle_large"
             style={{
                 margin: `${margin}`
             }}
