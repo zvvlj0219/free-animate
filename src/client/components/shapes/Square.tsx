@@ -1,20 +1,21 @@
+import { Theme } from '../../view/EditAnimate'
+import { colorProvider, opacityProvider, marginProvider } from '../FadeInShapes'
+
 type Props = {
-    color: string
-    opacity: number
-    margin: string
+    theme: Theme
 }
 
-export const SquareSmallIcon = ({ color, opacity, margin = '' }: Props) => {
+export const SquareSmallIcon = ({ theme }: Props) => {
     const iconStyle = {
-        backgroundColor: color,
-        opacity
+        backgroundColor: colorProvider(theme),
+        opacity: opacityProvider()
     }
 
     return (
         <div
             className="square_small"
             style={{
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
             <div
@@ -28,17 +29,17 @@ export const SquareSmallIcon = ({ color, opacity, margin = '' }: Props) => {
     )
 }
 
-export const SquareMediumIcon = ({ color, opacity, margin = '' }: Props) => {
+export const SquareMediumIcon = ({ theme }: Props) => {
     const iconStyle = {
-        backgroundColor: color,
-        opacity
+        backgroundColor: colorProvider(theme),
+        opacity: opacityProvider()
     }
 
     return (
         <div
             className="square_medium"
             style={{
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
             <div
@@ -52,17 +53,17 @@ export const SquareMediumIcon = ({ color, opacity, margin = '' }: Props) => {
     )
 }
 
-export const SquareLargeIcon = ({ color, opacity, margin = '' }: Props) => {
+export const SquareLargeIcon = ({ theme }: Props) => {
     const iconStyle = {
-        backgroundColor: color,
-        opacity
+        backgroundColor: colorProvider(theme),
+        opacity: opacityProvider()
     }
 
     return (
         <div
             className="square_large"
             style={{
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
             <div

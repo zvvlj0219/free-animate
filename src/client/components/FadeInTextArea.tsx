@@ -6,7 +6,7 @@ type Props = {
     text: string
     textStyle: {
         fontSize: string
-        margin: string
+        padding: string
     }
     containerElm: string
     translate: {
@@ -33,7 +33,7 @@ const FadeInTextArea = ({
         isDownScroll,
         containerElm,
         ref,
-        margin: textStyle.margin,
+        padding: textStyle.padding,
         translate,
         duration
     })
@@ -52,7 +52,10 @@ const FadeInTextArea = ({
             className="fadein_textarea"
             id={`textarea_id_${id}`}
             ref={ref}
-            style={nodeStyle}
+            style={{
+                ...nodeStyle,
+                height: textStyle.fontSize
+            }}
         >
             <h2 style={{ fontSize: textStyle.fontSize }}>{text}</h2>
         </div>

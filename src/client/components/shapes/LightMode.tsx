@@ -1,22 +1,22 @@
 import LightModeIcon from '@mui/icons-material/LightMode'
+import { Theme } from '../../view/EditAnimate'
+import { colorProvider, opacityProvider, marginProvider } from '../FadeInShapes'
 
 type Props = {
-    color: string
-    opacity: number
-    margin: string
+    theme: Theme
 }
 
-export const LightModeSmallIcon = ({ color, opacity, margin = '' }: Props) => {
+export const LightModeSmallIcon = ({ theme }: Props) => {
     const iconStyle = {
-        color,
-        opacity
+        color: colorProvider(theme),
+        opacity: opacityProvider()
     }
 
     return (
         <div
             className="lightmode_small"
             style={{
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
             <LightModeIcon
@@ -29,17 +29,17 @@ export const LightModeSmallIcon = ({ color, opacity, margin = '' }: Props) => {
     )
 }
 
-export const LightModeMediumIcon = ({ color, opacity, margin = '' }: Props) => {
+export const LightModeMediumIcon = ({ theme }: Props) => {
     const iconStyle = {
-        color,
-        opacity
+        color: colorProvider(theme),
+        opacity: opacityProvider()
     }
 
     return (
         <div
             className="lightmode_medium"
             style={{
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
             <LightModeIcon
@@ -52,17 +52,17 @@ export const LightModeMediumIcon = ({ color, opacity, margin = '' }: Props) => {
     )
 }
 
-export const LightModeLargeIcon = ({ color, opacity, margin = '' }: Props) => {
+export const LightModeLargeIcon = ({ theme }: Props) => {
     const iconStyle = {
-        color,
-        opacity
+        color: colorProvider(theme),
+        opacity: opacityProvider()
     }
 
     return (
         <div
             className="lightmode_large"
             style={{
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
             <LightModeIcon

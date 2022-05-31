@@ -1,183 +1,169 @@
 import HexagonIcon from '@mui/icons-material/Hexagon'
+import { Theme } from '../../view/EditAnimate'
+import { colorProvider, opacityProvider, marginProvider } from '../FadeInShapes'
 
 type Props = {
-    color: string
-    opacity: number
-    justifyContent: string
-    margin: string
-    qty: number
+    theme: Theme
 }
 
-export const HexagonLeafSmallIcon = ({
-    color,
-    opacity,
-    justifyContent = '',
-    margin = '',
-    qty = 1
-}: Props) => {
+export const HexagonLeafSmallIcon = ({ theme }: Props) => {
     const commonStyle = {
         backgroundColor: 'transparant',
         fontSize: '40px',
         zIndex: 2,
-        color,
-        opacity
+        color: colorProvider(theme),
+        opacity: opacityProvider()
     }
+
+    const randamQty: number = Math.floor(Math.random() * 5)
 
     return (
         <div
             className="hexagonleaf_small"
             style={{
-                display: 'flex',
-                justifyContent: `${justifyContent}`,
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
-            <HexagonIcon
-                sx={{
-                    ...commonStyle,
-                    display: 'block'
-                }}
-            />
-            <HexagonIcon
-                sx={{
-                    ...commonStyle,
-                    paddingTop: '15px',
-                    marginLeft: '-10px',
-                    display: qty > 1 ? 'block' : 'none'
-                }}
-            />
-            <HexagonIcon
-                sx={{
-                    ...commonStyle,
-                    paddingBottom: '15px',
-                    marginLeft: '-10px',
-                    display: qty > 2 ? 'block' : 'none'
-                }}
-            />
-            <HexagonIcon
-                sx={{
-                    ...commonStyle,
-                    paddingTop: '15px',
-                    marginLeft: '-10px',
-                    display: qty > 3 ? 'block' : 'none'
-                }}
-            />
+            <div className="leaf_wrapper" style={{ display: 'flex' }}>
+                <HexagonIcon
+                    sx={{
+                        ...commonStyle,
+                        display: 'block'
+                    }}
+                />
+                <HexagonIcon
+                    sx={{
+                        ...commonStyle,
+                        paddingTop: '15px',
+                        marginLeft: '-10px',
+                        display: randamQty > 1 ? 'block' : 'none'
+                    }}
+                />
+                <HexagonIcon
+                    sx={{
+                        ...commonStyle,
+                        paddingBottom: '15px',
+                        marginLeft: '-10px',
+                        display: randamQty > 2 ? 'block' : 'none'
+                    }}
+                />
+                <HexagonIcon
+                    sx={{
+                        ...commonStyle,
+                        paddingTop: '15px',
+                        marginLeft: '-10px',
+                        display: randamQty > 3 ? 'block' : 'none'
+                    }}
+                />
+            </div>
         </div>
     )
 }
 
-export const HexagonLeafMediumIcon = ({
-    color,
-    opacity,
-    justifyContent = '',
-    margin = '',
-    qty = 1
-}: Props) => {
+export const HexagonLeafMediumIcon = ({ theme }: Props) => {
     const commonStyle = {
         backgroundColor: 'transparant',
         fontSize: '80px',
         zIndex: 2,
-        color,
-        opacity
+        color: colorProvider(theme),
+        opacity: opacityProvider()
     }
+
+    const randamQty: number = Math.floor(Math.random() * 5)
 
     return (
         <div
             className="hexagonleaf_medium"
             style={{
-                display: 'flex',
-                justifyContent: `${justifyContent}`,
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
-            <HexagonIcon
-                sx={{
-                    ...commonStyle,
-                    display: 'block'
-                }}
-            />
-            <HexagonIcon
-                sx={{
-                    ...commonStyle,
-                    paddingTop: '30px',
-                    marginLeft: '-25px',
-                    display: qty > 1 ? 'block' : 'none'
-                }}
-            />
-            <HexagonIcon
-                sx={{
-                    ...commonStyle,
-                    paddingBottom: '30px',
-                    marginLeft: '-25px',
-                    display: qty > 2 ? 'block' : 'none'
-                }}
-            />
-            <HexagonIcon
-                sx={{
-                    ...commonStyle,
-                    paddingTop: '30px',
-                    marginLeft: '-25px',
-                    display: qty > 3 ? 'block' : 'none'
-                }}
-            />
+            <div className="leaf_wrapper" style={{ display: 'flex' }}>
+                <HexagonIcon
+                    sx={{
+                        ...commonStyle,
+                        display: 'block'
+                    }}
+                />
+                <HexagonIcon
+                    sx={{
+                        ...commonStyle,
+                        paddingTop: '30px',
+                        marginLeft: '-25px',
+                        display: randamQty > 1 ? 'block' : 'none'
+                    }}
+                />
+                <HexagonIcon
+                    sx={{
+                        ...commonStyle,
+                        paddingBottom: '30px',
+                        marginLeft: '-25px',
+                        display: randamQty > 2 ? 'block' : 'none'
+                    }}
+                />
+                <HexagonIcon
+                    sx={{
+                        ...commonStyle,
+                        paddingTop: '30px',
+                        marginLeft: '-25px',
+                        display: randamQty > 3 ? 'block' : 'none'
+                    }}
+                />
+            </div>
         </div>
     )
 }
 
-export const HexagonLeafLargeIcon = ({
-    color,
-    opacity,
-    justifyContent = '',
-    margin = '',
-    qty = 1
-}: Props) => {
+export const HexagonLeafLargeIcon = ({ theme }: Props) => {
     const commonStyle = {
         backgroundColor: 'transparant',
         fontSize: '120px',
         zIndex: 2,
-        color,
-        opacity
+        color: colorProvider(theme),
+        opacity: opacityProvider()
     }
+
+    const randamQty: number = Math.floor(Math.random() * 5)
 
     return (
         <div
             className="hexagonleaf_large"
             style={{
-                display: 'flex',
-                justifyContent: `${justifyContent}`,
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
-            <HexagonIcon
-                sx={{
-                    ...commonStyle,
-                    display: 'block'
-                }}
-            />
-            <HexagonIcon
-                sx={{
-                    ...commonStyle,
-                    paddingTop: '45px',
-                    marginLeft: '-37px',
-                    display: qty > 1 ? 'block' : 'none'
-                }}
-            />
-            <HexagonIcon
-                sx={{
-                    ...commonStyle,
-                    paddingBottom: '45px',
-                    marginLeft: '-37px',
-                    display: qty > 2 ? 'block' : 'none'
-                }}
-            />
-            <HexagonIcon
-                sx={{
-                    ...commonStyle,
-                    paddingTop: '45px',
-                    marginLeft: '-37px',
-                    display: qty > 3 ? 'block' : 'none'
-                }}
-            />
+            <div className="leaf_wrapper" style={{ display: 'flex' }}>
+                <HexagonIcon
+                    sx={{
+                        ...commonStyle,
+                        display: 'block'
+                    }}
+                />
+                <HexagonIcon
+                    sx={{
+                        ...commonStyle,
+                        paddingTop: '45px',
+                        marginLeft: '-37px',
+                        display: randamQty > 1 ? 'block' : 'none'
+                    }}
+                />
+                <HexagonIcon
+                    sx={{
+                        ...commonStyle,
+                        paddingBottom: '45px',
+                        marginLeft: '-37px',
+                        display: randamQty > 2 ? 'block' : 'none'
+                    }}
+                />
+                <HexagonIcon
+                    sx={{
+                        ...commonStyle,
+                        paddingTop: '45px',
+                        marginLeft: '-37px',
+                        display: randamQty > 3 ? 'block' : 'none'
+                    }}
+                />
+            </div>
         </div>
     )
 }

@@ -1,22 +1,22 @@
 import AcUnitIcon from '@mui/icons-material/AcUnit'
+import { Theme } from '../../view/EditAnimate'
+import { colorProvider, opacityProvider, marginProvider } from '../FadeInShapes'
 
 type Props = {
-    color: string
-    opacity: number
-    margin: string
+    theme: Theme
 }
 
-export const AcUnitSmallIcon = ({ color, opacity, margin = '' }: Props) => {
+export const AcUnitSmallIcon = ({ theme }: Props) => {
     const iconStyle = {
-        color,
-        opacity
+        color: colorProvider(theme),
+        opacity: opacityProvider()
     }
 
     return (
         <div
             className="acunit_small"
             style={{
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
             <AcUnitIcon
@@ -29,17 +29,17 @@ export const AcUnitSmallIcon = ({ color, opacity, margin = '' }: Props) => {
     )
 }
 
-export const AcUnitMediumIcon = ({ color, opacity, margin = '' }: Props) => {
+export const AcUnitMediumIcon = ({ theme }: Props) => {
     const iconStyle = {
-        color,
-        opacity
+        color: colorProvider(theme),
+        opacity: opacityProvider()
     }
 
     return (
         <div
             className="acunit_medium"
             style={{
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
             <AcUnitIcon
@@ -51,17 +51,17 @@ export const AcUnitMediumIcon = ({ color, opacity, margin = '' }: Props) => {
         </div>
     )
 }
-export const AcUnitLargeIcon = ({ color, opacity, margin = '' }: Props) => {
+export const AcUnitLargeIcon = ({ theme }: Props) => {
     const iconStyle = {
-        color,
-        opacity
+        color: colorProvider(theme),
+        opacity: opacityProvider()
     }
 
     return (
         <div
             className="acunit_large"
             style={{
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
             <AcUnitIcon

@@ -1,26 +1,22 @@
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
+import { Theme } from '../../view/EditAnimate'
+import { colorProvider, opacityProvider, marginProvider } from '../FadeInShapes'
 
 type Props = {
-    color: string
-    opacity: number
-    margin: string
+    theme: Theme
 }
 
-export const AutoAwesomeSmallIcon = ({
-    color,
-    opacity,
-    margin = ''
-}: Props) => {
+export const AutoAwesomeSmallIcon = ({ theme }: Props) => {
     const iconStyle = {
-        color,
-        opacity
+        color: colorProvider(theme),
+        opacity: opacityProvider()
     }
 
     return (
         <div
             className="autoawesome_small"
             style={{
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
             <AutoAwesomeIcon
@@ -33,21 +29,17 @@ export const AutoAwesomeSmallIcon = ({
     )
 }
 
-export const AutoAwesomeMediumIcon = ({
-    color,
-    opacity,
-    margin = ''
-}: Props) => {
+export const AutoAwesomeMediumIcon = ({ theme }: Props) => {
     const iconStyle = {
-        color,
-        opacity
+        color: colorProvider(theme),
+        opacity: opacityProvider()
     }
 
     return (
         <div
             className="autoawesome_medium"
             style={{
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
             <AutoAwesomeIcon
@@ -60,21 +52,17 @@ export const AutoAwesomeMediumIcon = ({
     )
 }
 
-export const AutoAwesomeLargeIcon = ({
-    color,
-    opacity,
-    margin = ''
-}: Props) => {
+export const AutoAwesomeLargeIcon = ({ theme }: Props) => {
     const iconStyle = {
-        color,
-        opacity
+        color: colorProvider(theme),
+        opacity: opacityProvider()
     }
 
     return (
         <div
             className="autoawesome_large"
             style={{
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
             <AutoAwesomeIcon
