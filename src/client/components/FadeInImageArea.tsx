@@ -7,7 +7,7 @@ type Props = {
     imageStyle: {
         width: string
         height: string
-        margin: string
+        padding: string
         display: string
     }
     containerElm: string
@@ -35,7 +35,7 @@ const FadeInImageArea = ({
         isDownScroll,
         containerElm,
         ref,
-        margin: imageStyle.margin,
+        padding: imageStyle.padding,
         translate,
         duration
     })
@@ -54,9 +54,20 @@ const FadeInImageArea = ({
             className="fadein_imagearea"
             id={`imagearea_id_${id}`}
             ref={ref}
-            style={nodeStyle}
+            style={{
+                ...nodeStyle,
+                height: imageStyle.height
+            }}
         >
-            <img src={src} alt="" style={imageStyle} />
+            <img
+                src={src}
+                alt=""
+                style={{
+                    width: imageStyle.width,
+                    height: imageStyle.height,
+                    display: imageStyle.display
+                }}
+            />
         </div>
     )
 }

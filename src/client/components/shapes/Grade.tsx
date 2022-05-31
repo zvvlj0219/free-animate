@@ -1,22 +1,22 @@
 import GradeIcon from '@mui/icons-material/Grade'
+import { Theme } from '../../view/EditAnimate'
+import { colorProvider, opacityProvider, marginProvider } from '../FadeInShapes'
 
 type Props = {
-    color: string
-    opacity: number
-    margin: string
+    theme: Theme
 }
 
-export const GradeSmallIcon = ({ color, opacity, margin = '' }: Props) => {
+export const GradeSmallIcon = ({ theme }: Props) => {
     const iconStyle = {
-        color,
-        opacity
+        color: colorProvider(theme),
+        opacity: opacityProvider()
     }
 
     return (
         <div
             className="grade_small"
             style={{
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
             <GradeIcon
@@ -29,17 +29,17 @@ export const GradeSmallIcon = ({ color, opacity, margin = '' }: Props) => {
     )
 }
 
-export const GradeMediumIcon = ({ color, opacity, margin = '' }: Props) => {
+export const GradeMediumIcon = ({ theme }: Props) => {
     const iconStyle = {
-        color,
-        opacity
+        color: colorProvider(theme),
+        opacity: opacityProvider()
     }
 
     return (
         <div
             className="grade_medium"
             style={{
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
             <GradeIcon
@@ -52,17 +52,17 @@ export const GradeMediumIcon = ({ color, opacity, margin = '' }: Props) => {
     )
 }
 
-export const GradeLargeIcon = ({ color, opacity, margin = '' }: Props) => {
+export const GradeLargeIcon = ({ theme }: Props) => {
     const iconStyle = {
-        color,
-        opacity
+        color: colorProvider(theme),
+        opacity: opacityProvider()
     }
 
     return (
         <div
             className="grade_large"
             style={{
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
             <GradeIcon

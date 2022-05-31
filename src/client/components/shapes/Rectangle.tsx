@@ -1,20 +1,21 @@
+import { Theme } from '../../view/EditAnimate'
+import { colorProvider, opacityProvider, marginProvider } from '../FadeInShapes'
+
 type Props = {
-    color: string
-    opacity: number
-    margin: string
+    theme: Theme
 }
 
-export const RectangleSmallIcon = ({ color, opacity, margin = '' }: Props) => {
+export const RectangleSmallIcon = ({ theme }: Props) => {
     const iconStyle = {
-        backgroundColor: color,
-        opacity
+        backgroundColor: colorProvider(theme),
+        opacity: opacityProvider()
     }
 
     return (
         <div
             className="rectangle_small"
             style={{
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
             <div
@@ -28,17 +29,17 @@ export const RectangleSmallIcon = ({ color, opacity, margin = '' }: Props) => {
     )
 }
 
-export const RectangleMediumIcon = ({ color, opacity, margin = '' }: Props) => {
+export const RectangleMediumIcon = ({ theme }: Props) => {
     const iconStyle = {
-        backgroundColor: color,
-        opacity
+        backgroundColor: colorProvider(theme),
+        opacity: opacityProvider()
     }
 
     return (
         <div
             className="rectangle_medium"
             style={{
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
             <div
@@ -52,17 +53,17 @@ export const RectangleMediumIcon = ({ color, opacity, margin = '' }: Props) => {
     )
 }
 
-export const RectangleLargeIcon = ({ color, opacity, margin = '' }: Props) => {
+export const RectangleLargeIcon = ({ theme }: Props) => {
     const iconStyle = {
-        backgroundColor: color,
-        opacity
+        backgroundColor: colorProvider(theme),
+        opacity: opacityProvider()
     }
 
     return (
         <div
             className="rectangle_large"
             style={{
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
             <div

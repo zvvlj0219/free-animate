@@ -7,7 +7,7 @@ type State = {
 
 export type NodeStyle = {
     width: string
-    margin: string
+    padding: string
     transition: string
     opacity: number
     transform: string
@@ -18,7 +18,7 @@ export type Config = {
     containerElm: string
     ref: React.RefObject<HTMLDivElement>
     translate: { x: number; y: number }
-    margin?: string
+    padding?: string
     duration?: number
     adjust?: number
 }
@@ -49,7 +49,7 @@ const useFadeIn = ({
     containerElm,
     ref,
     translate,
-    margin = '',
+    padding = '',
     duration = 0.1,
     adjust = 0
 }: Config) => {
@@ -61,19 +61,18 @@ const useFadeIn = ({
     const nodeStyle = useMemo<NodeStyle>(
         () => ({
             width: '100%',
-            margin: `${margin}`,
+            padding: `${padding}`,
             transition: `all ${duration}s ease`,
             opacity: cssState.opacity,
             transform: cssState.transform
         }),
-        [cssState.opacity, cssState.transform, margin, duration]
+        [cssState.opacity, cssState.transform, padding, duration]
     )
 
     useEffect(() => {
         const container = document.getElementById(containerElm)
         if (!ref.current || !container) {
-            console.log('no ref or container')
-            return
+            throw new Error('no ref or container')
         }
 
         const { offsetTop } = ref.current

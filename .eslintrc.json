@@ -63,6 +63,7 @@
                 "tsx": "never"
             }
         ],
+        "import/no-cycle": "off",
         "react/function-component-definition": [
             2,
             {

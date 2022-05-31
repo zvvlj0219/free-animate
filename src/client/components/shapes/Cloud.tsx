@@ -1,22 +1,22 @@
 import CloudIcon from '@mui/icons-material/Cloud'
+import { Theme } from '../../view/EditAnimate'
+import { colorProvider, opacityProvider, marginProvider } from '../FadeInShapes'
 
 type Props = {
-    color: string
-    opacity: number
-    margin: string
+    theme: Theme
 }
 
-export const CloudSmallIcon = ({ color, opacity, margin = '' }: Props) => {
+export const CloudSmallIcon = ({ theme }: Props) => {
     const iconStyle = {
-        color,
-        opacity
+        color: colorProvider(theme),
+        opacity: opacityProvider()
     }
 
     return (
         <div
             className="cloud_small"
             style={{
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
             <CloudIcon
@@ -29,17 +29,17 @@ export const CloudSmallIcon = ({ color, opacity, margin = '' }: Props) => {
     )
 }
 
-export const CloudMediumIcon = ({ color, opacity, margin = '' }: Props) => {
+export const CloudMediumIcon = ({ theme }: Props) => {
     const iconStyle = {
-        color,
-        opacity
+        color: colorProvider(theme),
+        opacity: opacityProvider()
     }
 
     return (
         <div
             className="cloud_medium"
             style={{
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
             <CloudIcon
@@ -52,17 +52,17 @@ export const CloudMediumIcon = ({ color, opacity, margin = '' }: Props) => {
     )
 }
 
-export const CloudLargeIcon = ({ color, opacity, margin = '' }: Props) => {
+export const CloudLargeIcon = ({ theme }: Props) => {
     const iconStyle = {
-        color,
-        opacity
+        color: colorProvider(theme),
+        opacity: opacityProvider()
     }
 
     return (
         <div
             className="cloud_large"
             style={{
-                margin: `${margin}`
+                margin: `${marginProvider()}`
             }}
         >
             <CloudIcon
