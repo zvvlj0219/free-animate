@@ -1,8 +1,7 @@
 import { ParallaxLayer } from '@react-spring/parallax'
+import { PAGES, createOffset, createSpeed } from './ParallaxContainer'
 
 type Props = {
-    offset: number
-    speed: number
     text: string
     textStyle: {
         fontSize: string
@@ -10,11 +9,11 @@ type Props = {
     }
 }
 
-const ParallaxTextLayer = ({ offset, speed, text, textStyle }: Props) => {
+const ParallaxTextLayer = ({ text, textStyle }: Props) => {
     return (
         <ParallaxLayer
-            offset={offset}
-            speed={speed}
+            offset={createOffset(PAGES)}
+            speed={createSpeed(false)}
             style={{
                 padding: textStyle.padding,
                 height: textStyle.fontSize

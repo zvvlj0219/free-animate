@@ -14,7 +14,7 @@ export const AcUnitSmallIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="acunit_small"
+            className='acunit_small'
             style={{
                 margin: `${marginProvider()}`
             }}
@@ -37,7 +37,7 @@ export const AcUnitMediumIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="acunit_medium"
+            className='acunit_medium'
             style={{
                 margin: `${marginProvider()}`
             }}
@@ -59,7 +59,7 @@ export const AcUnitLargeIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="acunit_large"
+            className='acunit_large'
             style={{
                 margin: `${marginProvider()}`
             }}

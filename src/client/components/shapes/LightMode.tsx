@@ -14,7 +14,7 @@ export const LightModeSmallIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="lightmode_small"
+            className='lightmode_small'
             style={{
                 margin: `${marginProvider()}`
             }}
@@ -37,7 +37,7 @@ export const LightModeMediumIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="lightmode_medium"
+            className='lightmode_medium'
             style={{
                 margin: `${marginProvider()}`
             }}
@@ -60,7 +60,7 @@ export const LightModeLargeIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="lightmode_large"
+            className='lightmode_large'
             style={{
                 margin: `${marginProvider()}`
             }}

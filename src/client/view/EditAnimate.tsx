@@ -1,5 +1,7 @@
-import FadeIn from '../components/Fadein'
+import FadeIn from '../components/FadeIn'
 import ParallaxContainer from '../components/ParallaxContainer'
+
+import { marginProvider as paddingProvider } from '../components/ParallaxShapes'
 
 interface Text {
     id: number
@@ -38,44 +40,45 @@ import js from '../assets/sample/JavaScript.png'
 import node from '../assets/sample/Node.js.png'
 import ts from '../assets/sample/TypeScript.png'
 import vue from '../assets/sample/Vue.js.png'
+import { Link } from 'react-router-dom'
 
 const sampleImgStyle1 = {
     width: '150px',
     height: '150px',
-    padding: '0 20%',
+    padding: paddingProvider(),
     display: 'block'
 }
 const sampleImgStyle2 = {
     width: '170px',
     height: '170px',
-    padding: '0 30%',
+    padding: paddingProvider(),
     display: 'block'
 }
 const sampleImgStyle3 = {
     width: '200px',
     height: '200px',
-    padding: '0 20%',
+    padding: paddingProvider(),
     display: 'block'
 }
 
 const sampleImgStyle4 = {
     width: '200px',
     height: '200px',
-    padding: '0 10%',
+    padding: paddingProvider(),
     display: 'block'
 }
 
 const sampleTextStyle1 = {
     fontSize: '30px',
-    padding: '0 30%'
+    padding: paddingProvider(),
 }
 const sampleTextStyle2 = {
     fontSize: '40px',
-    padding: '0 40%'
+    padding: paddingProvider(),
 }
 const sampleTextStyle3 = {
     fontSize: '50px',
-    padding: '0 50%'
+    padding: paddingProvider(),
 }
 
 const samplePropsArray: AnimationProps[] = [
@@ -131,7 +134,7 @@ const samplePropsArray: AnimationProps[] = [
     {
         id: 611,
         src: js,
-        imageStyle: sampleImgStyle1,
+        imageStyle: sampleImgStyle2,
         translate: { x: 300, y: 0 },
         duration: 0.6
     },
@@ -152,7 +155,7 @@ const samplePropsArray: AnimationProps[] = [
     {
         id: 622,
         src: ts,
-        imageStyle: sampleImgStyle2,
+        imageStyle: sampleImgStyle1,
         translate: { x: 200, y: 0 },
         duration: 0.3
     },
@@ -173,14 +176,14 @@ const samplePropsArray: AnimationProps[] = [
     {
         id: 633,
         src: vue,
-        imageStyle: sampleImgStyle3,
+        imageStyle: sampleImgStyle1,
         translate: { x: 400, y: 0 },
         duration: 0.6
     },
     {
         id: 644,
         src: node,
-        imageStyle: sampleImgStyle4,
+        imageStyle: sampleImgStyle2,
         translate: { x: 200, y: 0 },
         duration: 0.4
     },
@@ -194,7 +197,7 @@ const samplePropsArray: AnimationProps[] = [
     {
         id: 722,
         src: ts,
-        imageStyle: sampleImgStyle2,
+        imageStyle: sampleImgStyle4,
         translate: { x: 200, y: 0 },
         duration: 0.7
     },
@@ -208,7 +211,7 @@ const samplePropsArray: AnimationProps[] = [
     {
         id: 533,
         src: vue,
-        imageStyle: sampleImgStyle3,
+        imageStyle: sampleImgStyle2,
         translate: { x: 400, y: 0 },
         duration: 0.9
     },
@@ -224,7 +227,7 @@ const samplePropsArray: AnimationProps[] = [
 export type Theme = 'stylish' | 'pop' | 'sick'
 
 // sample Theme 実際は動的に取得
-const sampleTheme = 'sick'
+const sampleTheme = 'stylish'
 
 // いろんなところで使う
 export const sampleColor = [
@@ -242,13 +245,34 @@ export const sampleColor = [
     }
 ]
 
+export const createBackground = (theme: Theme, a: boolean): string => {
+    switch (theme) {
+        case 'stylish':
+            return `rgba(202, 240, 248, ${ a ? 0.3 : 1})`
+            break
+        case 'pop':
+            return `rgba(247, 37, 133, ${ a ? 0.1 : 1 })`
+            break
+        case 'sick':
+            return `rgba(198, 172, 143, ${ a ? 0.4 : 1 })`
+            break
+        default:
+            return ''
+    }
+}
+
 const EditAnimate = () => {
     return (
-        <div className="editAnimate">
+        <div
+            className='editAnimate'
+        >
             <h1>this is editAnimate</h1>
             <hr />
             <FadeIn configArray={samplePropsArray} theme={sampleTheme} />
-            {/* <ParallaxContainer /> */}
+            {/* <ParallaxContainer
+                configArray={samplePropsArray}
+                theme={sampleTheme}
+            /> */}
         </div>
     )
 }

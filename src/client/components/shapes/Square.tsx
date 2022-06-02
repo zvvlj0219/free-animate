@@ -13,7 +13,7 @@ export const SquareSmallIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="square_small"
+            className='square_small'
             style={{
                 margin: `${marginProvider()}`
             }}
@@ -37,7 +37,7 @@ export const SquareMediumIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="square_medium"
+            className='square_medium'
             style={{
                 margin: `${marginProvider()}`
             }}
@@ -61,7 +61,7 @@ export const SquareLargeIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="square_large"
+            className='square_large'
             style={{
                 margin: `${marginProvider()}`
             }}
