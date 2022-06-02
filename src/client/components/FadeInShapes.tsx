@@ -47,99 +47,99 @@ type Props = {
 const generateShapeArr = (): Shape[] => [
     {
         theme: 'stylish',
-        component: <AutoAwesomeSmallIcon theme="stylish" />
+        component: <AutoAwesomeSmallIcon theme='stylish' />
     },
     {
         theme: 'stylish',
-        component: <AutoAwesomeMediumIcon theme="stylish" />
+        component: <AutoAwesomeMediumIcon theme='stylish' />
     },
     {
         theme: 'stylish',
-        component: <AutoAwesomeLargeIcon theme="stylish" />
+        component: <AutoAwesomeLargeIcon theme='stylish' />
     },
     {
         theme: 'stylish',
-        component: <HexagonLeafSmallIcon theme="stylish" />
+        component: <HexagonLeafSmallIcon theme='stylish' />
     },
     {
         theme: 'stylish',
-        component: <HexagonLeafMediumIcon theme="stylish" />
+        component: <HexagonLeafMediumIcon theme='stylish' />
     },
     {
         theme: 'stylish',
-        component: <HexagonLeafLargeIcon theme="stylish" />
+        component: <HexagonLeafLargeIcon theme='stylish' />
     },
     {
         theme: 'stylish',
-        component: <AcUnitSmallIcon theme="stylish" />
+        component: <AcUnitSmallIcon theme='stylish' />
     },
     {
         theme: 'stylish',
-        component: <AcUnitMediumIcon theme="stylish" />
+        component: <AcUnitMediumIcon theme='stylish' />
     },
     {
         theme: 'stylish',
-        component: <AcUnitLargeIcon theme="stylish" />
+        component: <AcUnitLargeIcon theme='stylish' />
     },
     {
         theme: 'pop',
-        component: <CloudSmallIcon theme="pop" />
+        component: <CloudSmallIcon theme='pop' />
     },
     {
         theme: 'pop',
-        component: <CloudMediumIcon theme="pop" />
+        component: <CloudMediumIcon theme='pop' />
     },
     {
         theme: 'pop',
-        component: <CloudLargeIcon theme="pop" />
+        component: <CloudLargeIcon theme='pop' />
     },
     {
         theme: 'pop',
-        component: <GradeSmallIcon theme="pop" />
+        component: <GradeSmallIcon theme='pop' />
     },
     {
         theme: 'pop',
-        component: <GradeMediumIcon theme="pop" />
+        component: <GradeMediumIcon theme='pop' />
     },
     {
         theme: 'pop',
-        component: <GradeLargeIcon theme="pop" />
+        component: <GradeLargeIcon theme='pop' />
     },
     {
         theme: 'pop',
-        component: <LightModeSmallIcon theme="pop" />
+        component: <LightModeSmallIcon theme='pop' />
     },
     {
         theme: 'pop',
-        component: <LightModeMediumIcon theme="pop" />
+        component: <LightModeMediumIcon theme='pop' />
     },
     {
         theme: 'pop',
-        component: <LightModeLargeIcon theme="pop" />
+        component: <LightModeLargeIcon theme='pop' />
     },
     {
         theme: 'sick',
-        component: <RectangleSmallIcon theme="sick" />
+        component: <RectangleSmallIcon theme='sick' />
     },
     {
         theme: 'sick',
-        component: <RectangleMediumIcon theme="sick" />
+        component: <RectangleMediumIcon theme='sick' />
     },
     {
         theme: 'sick',
-        component: <RectangleLargeIcon theme="sick" />
+        component: <RectangleLargeIcon theme='sick' />
     },
     {
         theme: 'sick',
-        component: <SquareSmallIcon theme="sick" />
+        component: <SquareSmallIcon theme='sick' />
     },
     {
         theme: 'sick',
-        component: <SquareMediumIcon theme="sick" />
+        component: <SquareMediumIcon theme='sick' />
     },
     {
         theme: 'sick',
-        component: <SquareLargeIcon theme="sick" />
+        component: <SquareLargeIcon theme='sick' />
     }
 ]
 
@@ -168,12 +168,11 @@ export const colorProvider = (theme: Theme): string => {
 }
 
 export const marginProvider = (): string => {
-    const min = 2
-    const max = 9
-    const percent =
-        (Math.floor(Math.random() * (max + 1 - min)) + min) *
-        (Math.floor(Math.random() * (max + 1 - min)) + min)
-    return `0 ${percent}%`
+    const min = 5
+    const max = 95
+    const percent = Math.floor(Math.random() * (max + 1 - min)) + min
+    console.log(percent)
+    return `0 0 0 ${percent}%`
 }
 
 export const opacityProvider = (): number => Math.random()
@@ -205,7 +204,7 @@ const FadeInShapes = ({ containerElm, theme }: Props) => {
     }, [onScroll])
 
     return (
-        <div className="fadeinshapes" ref={ref} style={nodeStyle}>
+        <div className='fadeinshapes' ref={ref} style={nodeStyle}>
             {shape}
         </div>
     )

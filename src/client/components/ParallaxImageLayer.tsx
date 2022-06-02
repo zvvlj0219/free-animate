@@ -1,8 +1,7 @@
 import { ParallaxLayer } from '@react-spring/parallax'
+import { PAGES, createOffset, createSpeed } from './ParallaxContainer'
 
 type Props = {
-    offset: number
-    speed: number
     src: string
     imageStyle: {
         width: string
@@ -12,11 +11,11 @@ type Props = {
     }
 }
 
-const ParallaxImageLayer = ({ offset, speed, src, imageStyle }: Props) => {
+const ParallaxImageLayer = ({ src, imageStyle }: Props) => {
     return (
         <ParallaxLayer
-            offset={offset}
-            speed={speed}
+            offset={createOffset(PAGES)}
+            speed={createSpeed(true)}
             style={{
                 height: imageStyle.height,
                 padding: imageStyle.padding
@@ -24,7 +23,7 @@ const ParallaxImageLayer = ({ offset, speed, src, imageStyle }: Props) => {
         >
             <img
                 src={src}
-                alt=""
+                alt=''
                 style={{
                     width: imageStyle.width,
                     height: imageStyle.height,

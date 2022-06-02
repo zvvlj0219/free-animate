@@ -19,12 +19,12 @@ export const HexagonLeafSmallIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="hexagonleaf_small"
+            className='hexagonleaf_small'
             style={{
                 margin: `${marginProvider()}`
             }}
         >
-            <div className="leaf_wrapper" style={{ display: 'flex' }}>
+            <div className='leaf_wrapper' style={{ display: 'flex' }}>
                 <HexagonIcon
                     sx={{
                         ...commonStyle,
@@ -73,12 +73,12 @@ export const HexagonLeafMediumIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="hexagonleaf_medium"
+            className='hexagonleaf_medium'
             style={{
                 margin: `${marginProvider()}`
             }}
         >
-            <div className="leaf_wrapper" style={{ display: 'flex' }}>
+            <div className='leaf_wrapper' style={{ display: 'flex' }}>
                 <HexagonIcon
                     sx={{
                         ...commonStyle,
@@ -127,12 +127,12 @@ export const HexagonLeafLargeIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="hexagonleaf_large"
+            className='hexagonleaf_large'
             style={{
                 margin: `${marginProvider()}`
             }}
         >
-            <div className="leaf_wrapper" style={{ display: 'flex' }}>
+            <div className='leaf_wrapper' style={{ display: 'flex' }}>
                 <HexagonIcon
                     sx={{
                         ...commonStyle,

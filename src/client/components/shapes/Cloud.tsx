@@ -14,7 +14,7 @@ export const CloudSmallIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="cloud_small"
+            className='cloud_small'
             style={{
                 margin: `${marginProvider()}`
             }}
@@ -37,7 +37,7 @@ export const CloudMediumIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="cloud_medium"
+            className='cloud_medium'
             style={{
                 margin: `${marginProvider()}`
             }}
@@ -60,7 +60,7 @@ export const CloudLargeIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="cloud_large"
+            className='cloud_large'
             style={{
                 margin: `${marginProvider()}`
             }}

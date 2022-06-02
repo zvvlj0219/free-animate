@@ -49,7 +49,7 @@ const FadeInTextArea = ({
 
     return (
         <div
-            className="fadein_textarea"
+            className='fadein_textarea'
             id={`textarea_id_${id}`}
             ref={ref}
             style={{

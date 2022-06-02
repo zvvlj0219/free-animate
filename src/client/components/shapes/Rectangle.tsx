@@ -13,7 +13,7 @@ export const RectangleSmallIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="rectangle_small"
+            className='rectangle_small'
             style={{
                 margin: `${marginProvider()}`
             }}
@@ -37,7 +37,7 @@ export const RectangleMediumIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="rectangle_medium"
+            className='rectangle_medium'
             style={{
                 margin: `${marginProvider()}`
             }}
@@ -61,7 +61,7 @@ export const RectangleLargeIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="rectangle_large"
+            className='rectangle_large'
             style={{
                 margin: `${marginProvider()}`
             }}

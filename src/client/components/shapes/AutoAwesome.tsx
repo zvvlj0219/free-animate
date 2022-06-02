@@ -14,7 +14,7 @@ export const AutoAwesomeSmallIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="autoawesome_small"
+            className='autoawesome_small'
             style={{
                 margin: `${marginProvider()}`
             }}
@@ -37,7 +37,7 @@ export const AutoAwesomeMediumIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="autoawesome_medium"
+            className='autoawesome_medium'
             style={{
                 margin: `${marginProvider()}`
             }}
@@ -60,7 +60,7 @@ export const AutoAwesomeLargeIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="autoawesome_large"
+            className='autoawesome_large'
             style={{
                 margin: `${marginProvider()}`
             }}

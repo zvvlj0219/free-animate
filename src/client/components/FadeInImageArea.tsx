@@ -51,7 +51,7 @@ const FadeInImageArea = ({
 
     return (
         <div
-            className="fadein_imagearea"
+            className='fadein_imagearea'
             id={`imagearea_id_${id}`}
             ref={ref}
             style={{
@@ -61,7 +61,7 @@ const FadeInImageArea = ({
         >
             <img
                 src={src}
-                alt=""
+                alt=''
                 style={{
                     width: imageStyle.width,
                     height: imageStyle.height,

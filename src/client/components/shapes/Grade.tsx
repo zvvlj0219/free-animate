@@ -14,7 +14,7 @@ export const GradeSmallIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="grade_small"
+            className='grade_small'
             style={{
                 margin: `${marginProvider()}`
             }}
@@ -37,7 +37,7 @@ export const GradeMediumIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="grade_medium"
+            className='grade_medium'
             style={{
                 margin: `${marginProvider()}`
             }}
@@ -60,7 +60,7 @@ export const GradeLargeIcon = ({ theme }: Props) => {
 
     return (
         <div
-            className="grade_large"
+            className='grade_large'
             style={{
                 margin: `${marginProvider()}`
             }}
