@@ -11,27 +11,25 @@ type Props = {
     }
 }
 
-const ParallaxImageLayer = ({ src, imageStyle }: Props) => {
-    return (
-        <ParallaxLayer
-            offset={createOffset(PAGES)}
-            speed={createSpeed(true)}
+const ParallaxImageLayer = ({ src, imageStyle }: Props) => (
+    <ParallaxLayer
+        offset={createOffset(PAGES)}
+        speed={createSpeed(true)}
+        style={{
+            height: imageStyle.height,
+            padding: imageStyle.padding
+        }}
+    >
+        <img
+            src={src}
+            alt=''
             style={{
+                width: imageStyle.width,
                 height: imageStyle.height,
-                padding: imageStyle.padding
+                display: imageStyle.display
             }}
-        >
-            <img
-                src={src}
-                alt=''
-                style={{
-                    width: imageStyle.width,
-                    height: imageStyle.height,
-                    display: imageStyle.display
-                }}
-            />
-        </ParallaxLayer>
-    )
-}
+        />
+    </ParallaxLayer>
+)
 
 export default ParallaxImageLayer
