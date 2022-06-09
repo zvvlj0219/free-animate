@@ -310,7 +310,7 @@ const MiniFadeIn = () => {
 
     const onResize = (wdt: number) => {
         if (wdt < 300) {
-            setContentWidth(260)
+            setContentWidth(250)
         }
 
         if (wdt > 300 && wdt <= 400) {
@@ -318,7 +318,7 @@ const MiniFadeIn = () => {
         }
 
         if (wdt > 400 && wdt <= 500) {
-            setContentWidth(430)
+            setContentWidth(370)
         }
 
         if (wdt > 600) {
@@ -336,7 +336,7 @@ const MiniFadeIn = () => {
             style={{
                 width: `${contentWidth}px`,
                 height: `${contentWidth}px`,
-                backgroundColor: 'rgba(247, 37, 133, 0.1)',
+                backgroundColor: 'rgba(247, 37, 133, 0.25)',
                 overflowY: 'scroll',
                 overflowX: 'hidden'
             }}
@@ -365,8 +365,8 @@ const MiniFadeIn = () => {
                 id={2}
                 src={node}
                 imageStyle={{
-                    width: '70px',
-                    height: '70px',
+                    width: '100px',
+                    height: '100px',
                     padding: '0 50%',
                     display: 'block'
                 }}
@@ -384,8 +384,8 @@ const MiniFadeIn = () => {
                 id={3}
                 src={ts}
                 imageStyle={{
-                    width: '50px',
-                    height: '50px',
+                    width: '100px',
+                    height: '100px',
                     padding: '0 60%',
                     display: 'block'
                 }}
@@ -416,8 +416,8 @@ const MiniFadeIn = () => {
                 id={1}
                 src={js}
                 imageStyle={{
-                    width: '80px',
-                    height: '80px',
+                    width: '90px',
+                    height: '90px',
                     padding: '0 30%',
                     display: 'block'
                 }}
@@ -473,8 +473,8 @@ const MiniFadeIn = () => {
                 id={4}
                 src={vue}
                 imageStyle={{
-                    width: '45px',
-                    height: '45px',
+                    width: '70px',
+                    height: '70px',
                     padding: '0 20%',
                     display: 'block'
                 }}

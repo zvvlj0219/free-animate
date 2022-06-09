@@ -17,6 +17,7 @@ export const createOffset = (pages: number): number => {
     const min = 0.3 * 10
     const max = (pages - min / 10) * 10
     const offset = (Math.floor(Math.random() * (max + 1 - min)) + min) / 10
+    console.log(offset)
     return offset
 }
 
