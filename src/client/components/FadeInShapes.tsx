@@ -171,7 +171,6 @@ export const marginProvider = (): string => {
     const min = 5
     const max = 95
     const percent = Math.floor(Math.random() * (max + 1 - min)) + min
-    console.log(percent)
     return `0 0 0 ${percent}%`
 }
 

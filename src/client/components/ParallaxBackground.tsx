@@ -5,7 +5,7 @@ type Props = {
     theme: Theme
 }
 
-const ParallaxBackground  = ({ theme }: Props) => (
+const ParallaxBackground = ({ theme }: Props) => (
     <>
         <ParallaxShapes theme={theme} />
         <ParallaxShapes theme={theme} />

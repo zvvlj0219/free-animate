@@ -70,15 +70,15 @@ const sampleImgStyle4 = {
 
 const sampleTextStyle1 = {
     fontSize: '30px',
-    padding: paddingProvider(),
+    padding: paddingProvider()
 }
 const sampleTextStyle2 = {
     fontSize: '40px',
-    padding: paddingProvider(),
+    padding: paddingProvider()
 }
 const sampleTextStyle3 = {
     fontSize: '50px',
-    padding: paddingProvider(),
+    padding: paddingProvider()
 }
 
 const samplePropsArray: AnimationProps[] = [
@@ -248,13 +248,13 @@ export const sampleColor = [
 export const createBackground = (theme: Theme, a: boolean): string => {
     switch (theme) {
         case 'stylish':
-            return `rgba(202, 240, 248, ${ a ? 0.3 : 1})`
+            return `rgba(202, 240, 248, ${a ? 0.3 : 1})`
             break
         case 'pop':
-            return `rgba(247, 37, 133, ${ a ? 0.1 : 1 })`
+            return `rgba(247, 37, 133, ${a ? 0.1 : 1})`
             break
         case 'sick':
-            return `rgba(198, 172, 143, ${ a ? 0.4 : 1 })`
+            return `rgba(198, 172, 143, ${a ? 0.4 : 1})`
             break
         default:
             return ''
@@ -263,9 +263,7 @@ export const createBackground = (theme: Theme, a: boolean): string => {
 
 const EditAnimate = () => {
     return (
-        <div
-            className='editAnimate'
-        >
+        <div className='editAnimate'>
             <h1>this is editAnimate</h1>
             <hr />
             <FadeIn configArray={samplePropsArray} theme={sampleTheme} />

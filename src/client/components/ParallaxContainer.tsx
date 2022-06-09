@@ -15,13 +15,13 @@ export const PAGES = 2
 
 export const createOffset = (pages: number): number => {
     const min = 0.3 * 10
-    const max = (pages - min/10) * 10
+    const max = (pages - min / 10) * 10
     const offset = (Math.floor(Math.random() * (max + 1 - min)) + min) / 10
     return offset
 }
 
 export const createSpeed = (isShape: boolean): number => {
-    const min = isShape ? - 0.3 * 10 : 1 * 10
+    const min = isShape ? -0.3 * 10 : 1 * 10
     const max = 0.8 * 10
     const speed = (Math.floor(Math.random() * (max + 1 - min)) + min) / 10
     return speed
@@ -43,25 +43,24 @@ const ParallaxContainer = ({ configArray, theme }: Props) => {
                 pages={PAGES}
                 className='parallax'
                 style={{
-                    backgroundColor: createBackground(theme, true),
+                    backgroundColor: createBackground(theme, true)
                 }}
             >
                 <ParallaxBackground theme={theme} />
-                {configArray.map(
-                    (el) =>
-                        'text' in el ? (
-                            <ParallaxTextLayer
-                                key={el.id}
-                                text={el.text}
-                                textStyle={el.textStyle}
-                            />
-                        ) : (
-                            <ParallaxImageLayer
-                                key={el.id}
-                                src={el.src}
-                                imageStyle={el.imageStyle}
-                            />
-                        )
+                {configArray.map((el) =>
+                    'text' in el ? (
+                        <ParallaxTextLayer
+                            key={el.id}
+                            text={el.text}
+                            textStyle={el.textStyle}
+                        />
+                    ) : (
+                        <ParallaxImageLayer
+                            key={el.id}
+                            src={el.src}
+                            imageStyle={el.imageStyle}
+                        />
+                    )
                 )}
             </Parallax>
         </div>
