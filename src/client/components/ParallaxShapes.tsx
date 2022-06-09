@@ -35,7 +35,6 @@ import {
 } from './shapes/Square'
 import { PAGES, createOffset, createSpeed } from './ParallaxContainer'
 
-
 type Shape = {
     theme: Theme
     component: JSX.Element
