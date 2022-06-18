@@ -1,3 +1,6 @@
+import { createContext, useContext, useCallback, useEffect, useMemo, useState } from 'react'
+import useAnimateConfig, { localStorageFactory } from '../module/useAnimateConfig'
+import { useLocation, useNavigate } from 'react-router-dom'
 import FadeIn from '../components/FadeIn'
 import ParallaxContainer from '../components/ParallaxContainer'
 
@@ -41,6 +44,7 @@ import node from '../assets/sample/Node.js.png'
 import ts from '../assets/sample/TypeScript.png'
 import vue from '../assets/sample/Vue.js.png'
 import { Link } from 'react-router-dom'
+import Previewer from './Previewer'
 
 const sampleImgStyle1 = {
     width: '150px',
@@ -72,10 +76,12 @@ const sampleTextStyle1 = {
     fontSize: '30px',
     padding: paddingProvider()
 }
+
 const sampleTextStyle2 = {
     fontSize: '40px',
     padding: paddingProvider()
 }
+
 const sampleTextStyle3 = {
     fontSize: '50px',
     padding: paddingProvider()
@@ -262,15 +268,39 @@ export const createBackground = (theme: Theme, a: boolean): string => {
 }
 
 const EditAnimate = () => {
+    const { state, updateConfig } = useAnimateConfig()
+
+    // sample
+    useEffect(() => {
+        setTimeout(() => {
+            updateConfig(samplePropsArray, sampleTheme)
+        }, 2500)
+        return () => console.log('return ')
+    }, [])
+
+    useEffect(() => {
+        localStorageFactory(state)
+    }, [state])
+
+    const openPreview = () => {
+        // 簡単なバリデーション
+        if (state.configArray === []) return alert('configArrayがありません')
+        if (state.theme === null) return alert('themeがありません')
+        console.log('open preview')
+    }
+
     return (
         <div className='editAnimate'>
             <h1>this is editAnimate</h1>
             <hr />
-            <FadeIn configArray={samplePropsArray} theme={sampleTheme} />
-            {/* <ParallaxContainer
-                configArray={samplePropsArray}
-                theme={sampleTheme}
-            /> */}
+            <h2>current theme is {state.theme ? state.theme : 'null'}</h2>
+            <Link
+                to='/previewer'
+                target='_blank'
+                onClick={() => openPreview()}
+            >
+                open preview
+            </Link>
         </div>
     )
 }

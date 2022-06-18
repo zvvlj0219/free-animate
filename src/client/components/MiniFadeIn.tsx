@@ -77,7 +77,11 @@ const CONTAINER = 'mini_container'
 
 const theme: Theme = 'stylish'
 
-const scrollTop = () => Math.max(document.getElementById(CONTAINER).scrollTop)
+const scrollTop = () => {
+    const container = document.getElementById(CONTAINER)
+    if (!container) return 0
+    return Math.max(container.scrollTop)
+}
 
 const getScrollDirection = (
     prevPosition: number,
@@ -85,7 +89,9 @@ const getScrollDirection = (
     reinitPosition: (value: React.SetStateAction<number>) => void
 ) => {
     const currentPosition = scrollTop()
-    if (currentPosition > prevPosition) {
+    if (!currentPosition) return
+
+    if (currentPosition > prevPosition ) {
         changeDirection(true)
     } else {
         changeDirection(false)
@@ -188,6 +194,7 @@ const MiniShape = ({ children }: Children) => {
 
     useEffect(() => {
         const containerElm = document.getElementById(CONTAINER)
+        if (!containerElm) return 
         containerElm.addEventListener('scroll', onScroll)
         return () => containerElm.removeEventListener('scroll', onScroll)
     }, [onScroll])
@@ -228,6 +235,7 @@ const MiniFadeInTextArea = ({
 
     useEffect(() => {
         const containerElm = document.getElementById(CONTAINER)
+        if (!containerElm) return 
         containerElm.addEventListener('scroll', onScroll)
         return () => containerElm.removeEventListener('scroll', onScroll)
     }, [onScroll])
@@ -277,6 +285,7 @@ const MiniFadeInImageArea = ({
 
     useEffect(() => {
         const containerElm = document.getElementById(CONTAINER)
+        if (!containerElm) return 
         containerElm.addEventListener('scroll', onScroll)
         return () => containerElm.removeEventListener('scroll', onScroll)
     }, [onScroll])
@@ -373,7 +382,7 @@ const MiniFadeIn = () => {
                 container={CONTAINER}
                 translate={{ x: 25, y: 0 }}
                 duration={0.4}
-                adjust={380}
+                adjust={400}
             />
 
             <MiniShape>
@@ -392,7 +401,7 @@ const MiniFadeIn = () => {
                 container={CONTAINER}
                 translate={{ x: 10, y: 0 }}
                 duration={0.6}
-                adjust={380}
+                adjust={400}
             />
 
             <MiniFadeInTextArea
@@ -405,7 +414,7 @@ const MiniFadeIn = () => {
                 container={CONTAINER}
                 translate={{ x: 20, y: 0 }}
                 duration={0.4}
-                adjust={330}
+                adjust={380}
             />
 
             <MiniShape>
@@ -441,7 +450,7 @@ const MiniFadeIn = () => {
                 container={CONTAINER}
                 translate={{ x: 20, y: 0 }}
                 duration={0.5}
-                adjust={330}
+                adjust={400}
             />
 
             <MiniShape>
@@ -462,7 +471,7 @@ const MiniFadeIn = () => {
                 container={CONTAINER}
                 translate={{ x: 20, y: 0 }}
                 duration={0.8}
-                adjust={330}
+                adjust={380}
             />
 
             <MiniShape>
