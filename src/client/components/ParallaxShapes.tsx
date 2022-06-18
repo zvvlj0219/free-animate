@@ -154,7 +154,7 @@ const randomShape = (theme: Theme): JSX.Element => {
 }
 
 export const colorProvider = (theme: Theme): string => {
-    if (!theme) return
+    if (!theme) return 'lightgray'
 
     const themeObj = sampleColor.filter((palette) => theme === palette.theme)
 

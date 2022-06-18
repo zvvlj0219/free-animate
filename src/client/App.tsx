@@ -1,29 +1,50 @@
-import { Routes, Route, Link } from 'react-router-dom'
-import Home from './view/Home'
-import EditAnimate from './view/EditAnimate'
-import Previewer from './view/Previewer'
+import { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import { AnimationConfigContextProvider } from './module/useAnimateConfig'
+import ContentRouter from './ContentRouter'
 
-const App = () => (
-    <div className='app'>
-        <h1>this is app</h1>
-        <div>
-            <Link to='/' style={{ padding: '20px' }}>
-                home
-            </Link>
-            <Link to='/edit_animate' style={{ padding: '20px' }}>
-                edit animate
-            </Link>
-            <Link to='/previewer' style={{ padding: '20px' }}>
-                previewer
-            </Link>
+
+const App = () => {
+    const [isPreviewer, setIsPreviewer] = useState<boolean>(false)
+
+    const { pathname } = useLocation()
+
+    const contentStyle = {
+        display: isPreviewer ? 'none' : 'block'
+    }
+
+    useEffect(() => {   
+        if (pathname === '/previewer') {
+            setIsPreviewer(true)
+        } else {
+            setIsPreviewer(false)
+        }
+    }, [pathname])
+
+    return (
+        <div className='app'>
+            <div
+                className='header'
+                style={contentStyle}
+            >
+                <h1>this is header</h1>
+            </div>
+            <div
+                className='menu'
+                style={contentStyle}
+            >
+                <Link to='/' style={{ padding: '20px' }}>
+                    home
+                </Link>
+                <Link to='/edit_animate' style={{ padding: '20px' }}>
+                    edit animate
+                </Link>
+            </div>
+            <AnimationConfigContextProvider>
+                <ContentRouter />
+            </AnimationConfigContextProvider>
         </div>
-        <hr />
-        <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/edit_animate' element={<EditAnimate />} />
-            <Route path='/previewer' element={<Previewer />} />
-        </Routes>
-    </div>
-)
+    )
+}
 
 export default App
