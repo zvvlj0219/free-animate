@@ -1,6 +1,7 @@
 import CloudIcon from '@mui/icons-material/Cloud'
 import { Theme } from '../../view/EditAnimate'
-import { colorProvider, opacityProvider, marginProvider } from '../FadeInShapes'
+import { colorProvider, opacityProvider } from '../FadeInShapes'
+import { paddingProvider } from '../../view/EditAnimate'
 
 type Props = {
     theme: Theme
@@ -16,7 +17,7 @@ export const CloudSmallIcon = ({ theme }: Props) => {
         <div
             className='cloud_small'
             style={{
-                margin: `${marginProvider()}`
+                margin: `${paddingProvider()}`
             }}
         >
             <CloudIcon
@@ -39,7 +40,7 @@ export const CloudMediumIcon = ({ theme }: Props) => {
         <div
             className='cloud_medium'
             style={{
-                margin: `${marginProvider()}`
+                margin: `${paddingProvider()}`
             }}
         >
             <CloudIcon
@@ -62,7 +63,7 @@ export const CloudLargeIcon = ({ theme }: Props) => {
         <div
             className='cloud_large'
             style={{
-                margin: `${marginProvider()}`
+                margin: `${paddingProvider()}`
             }}
         >
             <CloudIcon

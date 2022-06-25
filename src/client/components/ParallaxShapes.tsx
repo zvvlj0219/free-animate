@@ -167,13 +167,6 @@ export const colorProvider = (theme: Theme): string => {
     return randomColor
 }
 
-export const marginProvider = (): string => {
-    const min = 5
-    const max = 95
-    const percent = Math.floor(Math.random() * (max + 1 - min)) + min
-    return `0 0 0 ${percent}%`
-}
-
 export const opacityProvider = (): number => Math.random()
 
 const ParallaxShapes = ({ theme }: Props) => {

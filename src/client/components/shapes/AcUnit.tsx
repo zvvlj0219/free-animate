@@ -1,6 +1,7 @@
 import AcUnitIcon from '@mui/icons-material/AcUnit'
 import { Theme } from '../../view/EditAnimate'
-import { colorProvider, opacityProvider, marginProvider } from '../FadeInShapes'
+import { colorProvider, opacityProvider } from '../FadeInShapes'
+import { paddingProvider } from '../../view/EditAnimate'
 
 type Props = {
     theme: Theme
@@ -16,7 +17,7 @@ export const AcUnitSmallIcon = ({ theme }: Props) => {
         <div
             className='acunit_small'
             style={{
-                margin: `${marginProvider()}`
+                margin: `${paddingProvider()}`
             }}
         >
             <AcUnitIcon
@@ -39,7 +40,7 @@ export const AcUnitMediumIcon = ({ theme }: Props) => {
         <div
             className='acunit_medium'
             style={{
-                margin: `${marginProvider()}`
+                margin: `${paddingProvider()}`
             }}
         >
             <AcUnitIcon
@@ -61,7 +62,7 @@ export const AcUnitLargeIcon = ({ theme }: Props) => {
         <div
             className='acunit_large'
             style={{
-                margin: `${marginProvider()}`
+                margin: `${paddingProvider()}`
             }}
         >
             <AcUnitIcon

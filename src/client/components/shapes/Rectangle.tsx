@@ -1,5 +1,6 @@
 import { Theme } from '../../view/EditAnimate'
-import { colorProvider, opacityProvider, marginProvider } from '../FadeInShapes'
+import { colorProvider, opacityProvider } from '../FadeInShapes'
+import { paddingProvider } from '../../view/EditAnimate'
 
 type Props = {
     theme: Theme
@@ -15,7 +16,7 @@ export const RectangleSmallIcon = ({ theme }: Props) => {
         <div
             className='rectangle_small'
             style={{
-                margin: `${marginProvider()}`
+                margin: `${paddingProvider()}`
             }}
         >
             <div
@@ -39,7 +40,7 @@ export const RectangleMediumIcon = ({ theme }: Props) => {
         <div
             className='rectangle_medium'
             style={{
-                margin: `${marginProvider()}`
+                margin: `${paddingProvider()}`
             }}
         >
             <div
@@ -63,7 +64,7 @@ export const RectangleLargeIcon = ({ theme }: Props) => {
         <div
             className='rectangle_large'
             style={{
-                margin: `${marginProvider()}`
+                margin: `${paddingProvider()}`
             }}
         >
             <div

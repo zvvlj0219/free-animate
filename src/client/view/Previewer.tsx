@@ -1,4 +1,6 @@
+import { useMemo } from 'react'
 import FadeIn from "../components/FadeIn"
+import ParallaxContainer from '../components/ParallaxContainer'
 import { Link } from "react-router-dom"
 import { State } from "../module/useAnimateConfig"
 import { useEffect, useState } from "react"
@@ -16,13 +18,32 @@ const Previewer = () => {
 
     return (
         <div className='previewer'>
-            <h1>this is previewer</h1>
-            <p>{state ? state.theme : 'none'}</p>
+            <div>
+                {
+                    state?.animation === 'FadeIn' && state?.theme 
+                    ? <FadeIn configArray={state.configArray} theme={state.theme} />
+                    : state?.animation === 'Parallax' && state?.theme
+                    ? <ParallaxContainer configArray={state.configArray} theme={state.theme} />
+                    : '...Loading'
+                }
+            </div>
             <Link to='/edit_animate'>
                 もどる
             </Link>
         </div>
     )
+    // return (
+    //     <div className='previewer'>
+    //         <div>
+    //             {
+    //                 state?.theme ? <FadeIn configArray={state.configArray} theme={state.theme} /> : '...Loading'
+    //             }
+    //         </div>
+    //         <Link to='/edit_animate'>
+    //             もどる
+    //         </Link>
+    //     </div>
+    // )
 }
 
 export default Previewer

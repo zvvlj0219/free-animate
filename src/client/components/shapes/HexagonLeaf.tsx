@@ -1,6 +1,7 @@
 import HexagonIcon from '@mui/icons-material/Hexagon'
 import { Theme } from '../../view/EditAnimate'
-import { colorProvider, opacityProvider, marginProvider } from '../FadeInShapes'
+import { colorProvider, opacityProvider } from '../FadeInShapes'
+import { paddingProvider } from '../../view/EditAnimate'
 
 type Props = {
     theme: Theme
@@ -21,7 +22,7 @@ export const HexagonLeafSmallIcon = ({ theme }: Props) => {
         <div
             className='hexagonleaf_small'
             style={{
-                margin: `${marginProvider()}`
+                margin: `${paddingProvider()}`
             }}
         >
             <div className='leaf_wrapper' style={{ display: 'flex' }}>
@@ -75,7 +76,7 @@ export const HexagonLeafMediumIcon = ({ theme }: Props) => {
         <div
             className='hexagonleaf_medium'
             style={{
-                margin: `${marginProvider()}`
+                margin: `${paddingProvider()}`
             }}
         >
             <div className='leaf_wrapper' style={{ display: 'flex' }}>
@@ -129,7 +130,7 @@ export const HexagonLeafLargeIcon = ({ theme }: Props) => {
         <div
             className='hexagonleaf_large'
             style={{
-                margin: `${marginProvider()}`
+                margin: `${paddingProvider()}`
             }}
         >
             <div className='leaf_wrapper' style={{ display: 'flex' }}>
