@@ -1,6 +1,7 @@
 import LightModeIcon from '@mui/icons-material/LightMode'
 import { Theme } from '../../view/EditAnimate'
-import { colorProvider, opacityProvider, marginProvider } from '../FadeInShapes'
+import { colorProvider, opacityProvider } from '../FadeInShapes'
+import { paddingProvider } from '../../view/EditAnimate'
 
 type Props = {
     theme: Theme
@@ -16,7 +17,7 @@ export const LightModeSmallIcon = ({ theme }: Props) => {
         <div
             className='lightmode_small'
             style={{
-                margin: `${marginProvider()}`
+                margin: `${paddingProvider()}`
             }}
         >
             <LightModeIcon
@@ -39,7 +40,7 @@ export const LightModeMediumIcon = ({ theme }: Props) => {
         <div
             className='lightmode_medium'
             style={{
-                margin: `${marginProvider()}`
+                margin: `${paddingProvider()}`
             }}
         >
             <LightModeIcon
@@ -62,7 +63,7 @@ export const LightModeLargeIcon = ({ theme }: Props) => {
         <div
             className='lightmode_large'
             style={{
-                margin: `${marginProvider()}`
+                margin: `${paddingProvider()}`
             }}
         >
             <LightModeIcon

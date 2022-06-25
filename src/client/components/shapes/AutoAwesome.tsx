@@ -1,6 +1,7 @@
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
 import { Theme } from '../../view/EditAnimate'
-import { colorProvider, opacityProvider, marginProvider } from '../FadeInShapes'
+import { colorProvider, opacityProvider } from '../FadeInShapes'
+import { paddingProvider } from '../../view/EditAnimate'
 
 type Props = {
     theme: Theme
@@ -16,7 +17,7 @@ export const AutoAwesomeSmallIcon = ({ theme }: Props) => {
         <div
             className='autoawesome_small'
             style={{
-                margin: `${marginProvider()}`
+                margin: `${paddingProvider()}`
             }}
         >
             <AutoAwesomeIcon
@@ -39,7 +40,7 @@ export const AutoAwesomeMediumIcon = ({ theme }: Props) => {
         <div
             className='autoawesome_medium'
             style={{
-                margin: `${marginProvider()}`
+                margin: `${paddingProvider()}`
             }}
         >
             <AutoAwesomeIcon
@@ -62,7 +63,7 @@ export const AutoAwesomeLargeIcon = ({ theme }: Props) => {
         <div
             className='autoawesome_large'
             style={{
-                margin: `${marginProvider()}`
+                margin: `${paddingProvider()}`
             }}
         >
             <AutoAwesomeIcon

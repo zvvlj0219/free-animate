@@ -1,6 +1,7 @@
 import GradeIcon from '@mui/icons-material/Grade'
 import { Theme } from '../../view/EditAnimate'
-import { colorProvider, opacityProvider, marginProvider } from '../FadeInShapes'
+import { colorProvider, opacityProvider } from '../FadeInShapes'
+import { paddingProvider } from '../../view/EditAnimate'
 
 type Props = {
     theme: Theme
@@ -16,7 +17,7 @@ export const GradeSmallIcon = ({ theme }: Props) => {
         <div
             className='grade_small'
             style={{
-                margin: `${marginProvider()}`
+                margin: `${paddingProvider()}`
             }}
         >
             <GradeIcon
@@ -39,7 +40,7 @@ export const GradeMediumIcon = ({ theme }: Props) => {
         <div
             className='grade_medium'
             style={{
-                margin: `${marginProvider()}`
+                margin: `${paddingProvider()}`
             }}
         >
             <GradeIcon
@@ -62,7 +63,7 @@ export const GradeLargeIcon = ({ theme }: Props) => {
         <div
             className='grade_large'
             style={{
-                margin: `${marginProvider()}`
+                margin: `${paddingProvider()}`
             }}
         >
             <GradeIcon

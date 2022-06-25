@@ -38,20 +38,24 @@ type AnimationProps = Text | Image
 
 type Theme = 'stylish' | 'pop' | 'sick'
 
+export type Animation = 'FadeIn' | 'Parallax'
+
 export type State = {
-    configArray: AnimationProps[],
+    configArray: AnimationProps[]
     theme: Theme | null
+    animation: Animation | null
 }
 
 const AnimationConfigContext = createContext({} as {
     state: State,
-    updateConfig: (configArray: AnimationProps[], theme: Theme) => void
+    updateConfig: (configArray: AnimationProps[], theme: Theme, animation: Animation) => void
 })
 
 const initialStateFactory = (initialState?: State): State => {
     return {
         configArray: [],
         theme: null,
+        animation: null,
         ...initialState
     }
 }
@@ -68,13 +72,14 @@ export const AnimationConfigContextProvider = ({ children }: Children) => {
         initialStateFactory()
     )
 
-    const updateConfig = (_configArray: AnimationProps[], _theme: Theme) => {
+    const updateConfig = (_configArray: AnimationProps[], _theme: Theme, _animation: Animation) => {
         if (_configArray === [] || _theme === null) {
             throw new Error('no exist config array or theme')
         }
         setState({
             configArray: _configArray,
-            theme: _theme
+            theme: _theme,
+            animation: _animation
         })
     }
 
