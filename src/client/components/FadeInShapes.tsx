@@ -1,6 +1,6 @@
 import { useRef, useMemo, useCallback, useEffect, useState } from 'react'
 import useFadeIn, { getScrollDirection } from './useFadeIn'
-import { sampleColor, Theme } from '../view/EditAnimate'
+import { themeColor, Theme } from '../view/EditAnimate'
 import {
     AutoAwesomeSmallIcon,
     AutoAwesomeMediumIcon,
@@ -41,7 +41,7 @@ type Shape = {
 
 type Props = {
     containerElm: string
-    theme: 'stylish' | 'pop' | 'sick'
+    theme: Theme
 }
 
 const generateShapeArr = (): Shape[] => [
@@ -156,7 +156,7 @@ const randomShape = (theme: Theme): JSX.Element => {
 export const colorProvider = (theme: Theme): string => {
     if (!theme) return 'lightgray'
 
-    const themeObj = sampleColor.filter((palette) => theme === palette.theme)
+    const themeObj = themeColor.filter((palette) => theme === palette.theme)
 
     const colorArr = themeObj[0].color
 

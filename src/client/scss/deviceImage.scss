@@ -1,0 +1,313 @@
+$frame_color: hsl(0%, 0%, 40%);
+$primary_blue: rgb(70, 190, 230);
+$primary_pink: rgb(165, 40, 190);
+
+@media (min-width: 800px) {
+    .section.a .deviceimage {
+        .deviceimage_phone.a{
+            width: 100px;
+            height: 200px;
+            border: 8px solid $frame_color;
+            background-color: $frame_color;
+            border-radius: 10px;
+            transform: rotate(-25deg);
+    
+            .screen {
+                width: 100px;
+                height: 200px;
+                background: linear-gradient( to bottom,  $primary_blue 25%, $primary_pink 75% );
+                border-radius: 10px;
+            }
+        }
+    
+        .deviceimage_phone.b{
+            width: 150px;
+            height: 250px;
+            border: 8px solid $frame_color;
+            background-color: $frame_color;
+            border-radius: 10px;
+            transform: translate(190px, -250px) rotate(10deg);
+            position: relative;
+    
+            .screen {
+                width: 145px;
+                height: 245px;
+                background: linear-gradient( to bottom,  $primary_blue 25%, $primary_pink 75% );
+                border-radius: 10px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                margin: auto;
+            }
+        }
+    
+        .deviceimage_phone.c{
+            width: 100px;
+            height: 100px;
+            border: 8px solid $frame_color;
+            background-color: $frame_color;
+            border-radius: 10px;
+            transform: translate(400px, -340px);
+            position: relative;
+    
+            .screen {
+                width: 100px;
+                height: 100px;
+                background: linear-gradient( to top,  $primary_blue 25%, $primary_pink 75% );
+                border-radius: 10px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                margin: auto;
+            }
+        }
+    
+        .deviceimage_pc{
+            width: 250px;
+            height: 200px;
+            border: 8px solid $frame_color;
+            background-color: $frame_color;
+            border-radius: 10px;
+            transform: translate(70px, -300px);
+            position: relative;
+    
+            .tab {
+                background-color: $frame_color;
+                clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+                width: 60px;
+                height: 20px;
+                transform: translate(30px, -25px);
+            }
+    
+            .screen {
+                width: 250px;
+                height: 200px;
+                background: linear-gradient( to left,  $primary_blue 25%, $primary_pink 75% );
+                border-radius: 10px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                margin: auto;
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) and (min-width: 650px) {
+    .section.a .deviceimage {
+        .deviceimage_phone.a{
+            width: 80px;
+            height: 160px;
+            border: 8px solid $frame_color;
+            background-color: $frame_color;
+            border-radius: 10px;
+            transform: translate(-60px, 50px) rotate(-25deg);
+    
+            .screen {
+                width: 80px;
+                height: 160px;
+                background: linear-gradient( to bottom,  $primary_blue 25%, $primary_pink 75% );
+                border-radius: 10px;
+            }
+        }
+    
+        .deviceimage_phone.b{
+            width: 130px;
+            height: 230px;
+            border: 8px solid $frame_color;
+            background-color: $frame_color;
+            border-radius: 10px;
+            transform: translate(130px, -200px) rotate(10deg);
+            position: relative;
+    
+            .screen {
+                width: 125px;
+                height: 225px;
+                background: linear-gradient( to bottom,  $primary_blue 25%, $primary_pink 75% );
+                border-radius: 10px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                margin: auto;
+            }
+        }
+    
+        .deviceimage_phone.c{
+            width: 100px;
+            height: 100px;
+            border: 8px solid $frame_color;
+            background-color: $frame_color;
+            border-radius: 10px;
+            transform: translate(350px, -340px) rotate(-5deg);
+            position: relative;
+    
+            .screen {
+                width: 100px;
+                height: 100px;
+                background: linear-gradient( to top,  $primary_blue 25%, $primary_pink 75% );
+                border-radius: 10px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                margin: auto;
+            }
+        }
+    
+        .deviceimage_pc{
+            width: 250px;
+            height: 200px;
+            border: 8px solid $frame_color;
+            background-color: $frame_color;
+            border-radius: 10px;
+            transform: translate(70px, -270px);
+            position: relative;
+    
+            .tab {
+                background-color: $frame_color;
+                clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+                width: 60px;
+                height: 20px;
+                transform: translate(30px, -25px);
+            }
+    
+            .screen {
+                width: 250px;
+                height: 200px;
+                background: linear-gradient( to left,  $primary_blue 25%, $primary_pink 75% );
+                border-radius: 10px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                margin: auto;
+            }
+        }
+    }
+}
+
+@media (max-width: 650px) and (min-width: 400px) {
+    .section.a .deviceimage {
+        .deviceimage_phone.a{
+            width: 80px;
+            height: 160px;
+            border: 8px solid $frame_color;
+            background-color: $frame_color;
+            border-radius: 10px;
+            transform: translate(-20px, 70px) rotate(-25deg);
+    
+            .screen {
+                width: 80px;
+                height: 160px;
+                background: linear-gradient( to bottom,  $primary_blue 25%, $primary_pink 75% );
+                border-radius: 10px;
+            }
+        }
+    
+        .deviceimage_phone.b{
+            width: 100px;
+            height: 200px;
+            border: 8px solid $frame_color;
+            background-color: $frame_color;
+            border-radius: 10px;
+            transform: translate(150px, -150px) rotate(10deg);
+            position: relative;
+    
+            .screen {
+                width: 100px;
+                height: 200px;
+                background: linear-gradient( to bottom,  $primary_blue 25%, $primary_pink 75% );
+                border-radius: 10px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                margin: auto;
+            }
+        }
+    
+        .deviceimage_phone.c{
+            width: 100px;
+            height: 100px;
+            border: 8px solid $frame_color;
+            background-color: $frame_color;
+            border-radius: 10px;
+            transform: translate(70px, -110px);
+            position: relative;
+    
+            .screen {
+                width: 100px;
+                height: 100px;
+                background: linear-gradient( to top,  $primary_blue 25%, $primary_pink 75% );
+                border-radius: 10px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                margin: auto;
+            }
+        }
+    
+        .deviceimage_pc{
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .deviceimage_phone.a,
+    .deviceimage_phone.b,
+    .deviceimage_phone.c {
+        display: none;
+    }
+
+    .deviceimage_pc{
+        width: 250px;
+        height: 200px;
+        border: 8px solid $frame_color;
+        background-color: $frame_color;
+        border-radius: 10px;
+        transform: translate(-20px, 30px);
+        position: relative;
+
+        .tab {
+            background-color: $frame_color;
+            clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+            width: 60px;
+            height: 20px;
+            transform: translate(30px, -25px);
+        }
+
+        .screen {
+            width: 250px;
+            height: 200px;
+            background: linear-gradient( to left,  $primary_blue 25%, $primary_pink 75% );
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+    }
+
+}
+
+@media (max-width: 300px) {
+    .section.a .deviceimage {
+        display: none;
+    }
+}

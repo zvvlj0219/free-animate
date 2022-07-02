@@ -40,7 +40,7 @@ type Config = {
 }
 
 type Image = {
-    id: number
+    id: string
     src: string
     imageStyle: {
         width: string
@@ -58,7 +58,7 @@ type Image = {
 }
 
 type Text = {
-    id: number
+    id: string
     text: string
     textStyle: {
         fontSize: string
@@ -153,7 +153,7 @@ const useMiniFadeIn = ({
             }
 
             // up scroll
-            if (!isDownScroll && offsetTop > scrollTop() + windowHeight * 0.5) {
+            if (!isDownScroll && offsetTop > scrollTop() + windowHeight * 1.5) {
                 updateStyle((_state) => ({
                     ..._state,
                     opacity: 0,
@@ -345,7 +345,7 @@ const MiniFadeIn = () => {
             style={{
                 width: `${contentWidth}px`,
                 height: `${contentWidth}px`,
-                backgroundColor: 'rgba(247, 37, 133, 0.25)',
+                backgroundColor: 'hotpink',
                 overflowY: 'scroll',
                 overflowX: 'hidden'
             }}
@@ -358,7 +358,7 @@ const MiniFadeIn = () => {
             </MiniShape>
 
             <MiniFadeInTextArea
-                id={1}
+                id='MiniFadeInTextArea1'
                 text='Fadein'
                 textStyle={{
                     fontSize: '50px',
@@ -366,12 +366,12 @@ const MiniFadeIn = () => {
                 }}
                 container={CONTAINER}
                 translate={{ x: 20, y: 0 }}
-                duration={0.6}
+                duration={0.3}
                 adjust={330}
             />
 
             <MiniFadeInImageArea
-                id={2}
+                id='MiniFadeInImageArea2'
                 src={node}
                 imageStyle={{
                     width: '100px',
@@ -390,7 +390,7 @@ const MiniFadeIn = () => {
             </MiniShape>
 
             <MiniFadeInImageArea
-                id={3}
+                id='MiniFadeInImageArea3'
                 src={ts}
                 imageStyle={{
                     width: '100px',
@@ -400,12 +400,12 @@ const MiniFadeIn = () => {
                 }}
                 container={CONTAINER}
                 translate={{ x: 10, y: 0 }}
-                duration={0.6}
+                duration={0.4}
                 adjust={400}
             />
 
             <MiniFadeInTextArea
-                id={1}
+                id='MiniFadeInImageArea4'
                 text='Free-Animate'
                 textStyle={{
                     fontSize: '30px',
@@ -413,7 +413,7 @@ const MiniFadeIn = () => {
                 }}
                 container={CONTAINER}
                 translate={{ x: 20, y: 0 }}
-                duration={0.4}
+                duration={0.2}
                 adjust={380}
             />
 
@@ -422,7 +422,7 @@ const MiniFadeIn = () => {
             </MiniShape>
 
             <MiniFadeInImageArea
-                id={1}
+                id='MiniFadeInImageArea5'
                 src={js}
                 imageStyle={{
                     width: '90px',
@@ -432,7 +432,7 @@ const MiniFadeIn = () => {
                 }}
                 container={CONTAINER}
                 translate={{ x: 30, y: 0 }}
-                duration={0.6}
+                duration={0.3}
                 adjust={380}
             />
 
@@ -441,7 +441,7 @@ const MiniFadeIn = () => {
             </MiniShape>
 
             <MiniFadeInTextArea
-                id={1}
+                id='MiniFadeInImageArea6'
                 text='hello world'
                 textStyle={{
                     fontSize: '20px',
@@ -462,7 +462,7 @@ const MiniFadeIn = () => {
             </MiniShape>
 
             <MiniFadeInTextArea
-                id={1}
+                id='MiniFadeInImageArea7'
                 text='Scroll'
                 textStyle={{
                     fontSize: '25px',
@@ -470,7 +470,7 @@ const MiniFadeIn = () => {
                 }}
                 container={CONTAINER}
                 translate={{ x: 20, y: 0 }}
-                duration={0.8}
+                duration={0.4}
                 adjust={380}
             />
 
@@ -479,7 +479,7 @@ const MiniFadeIn = () => {
             </MiniShape>
 
             <MiniFadeInImageArea
-                id={4}
+                id='MiniFadeInImageArea8'
                 src={vue}
                 imageStyle={{
                     width: '70px',

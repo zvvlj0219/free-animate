@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useState } from 'react';
-import { Text, paddingProvider } from '../../view/EditAnimate';
+import { useCallback } from 'react';
+import { Text } from '../../view/EditAnimate';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -28,8 +28,8 @@ const EditTextArea = ({
         setText(_text => ({
             ..._text,
             textStyle: {
+                ..._text.textStyle,
                 fontSize: (event.target as HTMLInputElement).value,
-                padding: paddingProvider()
             }
         }))
     },[])
