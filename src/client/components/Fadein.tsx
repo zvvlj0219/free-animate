@@ -1,5 +1,4 @@
-import { AnimationProps } from '../types/components_props'
-import { Theme, createBackground } from '../view/EditAnimate'
+import { Theme, createBackground, AnimationProps } from '../view/EditAnimate'
 import FadeInTextArea from './FadeInTextArea'
 import FadeInImageArea from './FadeInImageArea'
 import FadeInShapes from './FadeInShapes'

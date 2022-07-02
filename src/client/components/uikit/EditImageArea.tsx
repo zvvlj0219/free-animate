@@ -1,5 +1,5 @@
-import { useState, useCallback } from 'react'
-import { Image, paddingProvider } from '../../view/EditAnimate';
+import { useCallback } from 'react'
+import { Image } from '../../view/EditAnimate';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';

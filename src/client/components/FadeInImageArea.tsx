@@ -2,7 +2,7 @@ import { useRef, useCallback, useEffect, useState } from 'react'
 import useFadeIn, { getScrollDirection } from './useFadeIn'
 
 type Props = {
-    id: number
+    id: string
     src: string
     imageStyle: {
         width: string

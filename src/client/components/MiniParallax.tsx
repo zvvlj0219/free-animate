@@ -40,9 +40,9 @@ const MiniParallax = () => {
         <div
             className='mini_parallax'
             style={{
-                maxWidth: `${contentWidth}px`,
-                minHeight: `${contentWidth}px`,
-                backgroundColor: 'rgba(202, 240, 248, 0.7)'
+                width: `${contentWidth}px`,
+                height: `${contentWidth}px`,
+                backgroundColor: 'dodgerblue'
             }}
         >
             <Parallax
@@ -150,21 +150,6 @@ const MiniParallax = () => {
                         free&nbsp;style
                     </h2>
                 </ParallaxLayer>
-
-                {/* <ParallaxTextLayer
-                    text='component'
-                    textStyle={{
-                        fontSize: '40px',
-                        padding: '0 30%'
-                    }}
-                />
-                <ParallaxTextLayer
-                    text='anything'
-                    textStyle={{
-                        fontSize: '30px',
-                        padding: '0 60%'
-                    }}
-                /> */}
             </Parallax>
         </div>
     )

@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import FadeIn from "../components/FadeIn"
 import ParallaxContainer from '../components/ParallaxContainer'
 import { Link } from "react-router-dom"
@@ -32,18 +31,6 @@ const Previewer = () => {
             </Link>
         </div>
     )
-    // return (
-    //     <div className='previewer'>
-    //         <div>
-    //             {
-    //                 state?.theme ? <FadeIn configArray={state.configArray} theme={state.theme} /> : '...Loading'
-    //             }
-    //         </div>
-    //         <Link to='/edit_animate'>
-    //             もどる
-    //         </Link>
-    //     </div>
-    // )
 }
 
 export default Previewer

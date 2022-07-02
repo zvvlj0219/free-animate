@@ -1,7 +1,6 @@
 import React, { useRef } from 'react'
 import { Parallax, IParallax } from '@react-spring/parallax'
-import { AnimationProps } from '../types/components_props'
-import { Theme, createBackground } from '../view/EditAnimate'
+import { Theme, createBackground, AnimationProps } from '../view/EditAnimate'
 import ParallaxImageLayer from './ParallaxImageLayer'
 import ParallaxTextLayer from './ParallaxTextLayer'
 import ParallaxBackground from './ParallaxBackground'
@@ -17,7 +16,6 @@ export const createOffset = (pages: number): number => {
     const min = 0.3 * 10
     const max = (pages - min / 10) * 10
     const offset = (Math.floor(Math.random() * (max + 1 - min)) + min) / 10
-    console.log(offset)
     return offset
 }
 
@@ -30,7 +28,6 @@ export const createSpeed = (isShape: boolean): number => {
 
 const ParallaxContainer = ({ configArray, theme }: Props) => {
     const parallax = useRef<IParallax>(null)
-
     return (
         <div
             className='parallax_container'

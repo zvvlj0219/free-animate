@@ -1,13 +1,11 @@
-import React, { createContext, useContext, useCallback, useEffect, useMemo, useState } from 'react'
-import useAnimateConfig, { localStorageFactory, State, Animation } from '../module/useAnimateConfig'
+import React, { useEffect, useState } from 'react'
+import useAnimateConfig, { localStorageFactory } from '../module/useAnimateConfig'
+import { Link } from 'react-router-dom'
 import EditTextArea from '../components/uikit/EditTextArea'
 import EditImageArea from '../components/uikit/EditImageArea'
-import { useLocation, useNavigate } from 'react-router-dom'
-import FadeIn from '../components/FadeIn'
-import ParallaxContainer from '../components/ParallaxContainer'
 
 export interface Text {
-    id: number
+    id: string
     text: string
     textStyle: {
         fontSize: string
@@ -21,7 +19,7 @@ export interface Text {
 }
 
 export interface Image {
-    id: number
+    id: string
     src: string
     imageStyle: {
         width: string
@@ -36,225 +34,28 @@ export interface Image {
     duration: number
 }
 
-type AnimationProps = Text | Image
+export type AnimationProps = Text | Image
 
-// sample Data
-import js from '../assets/sample/JavaScript.png'
-import node from '../assets/sample/Node.js.png'
-import ts from '../assets/sample/TypeScript.png'
-import vue from '../assets/sample/Vue.js.png'
-import { Link } from 'react-router-dom'
-
-export const idProvider = (): number => {
-    // ほんとはランダムで
-    return Date.now()
-}
+export type Animation = 'FadeIn' | 'Parallax'
 
 export const paddingProvider = (): string => {
-    const min = 5
-    const max = 95
+    const min = 1
+    const max = 9
     const percent = Math.floor(Math.random() * (max + 1 - min)) + min
-    return `0 0 0 ${percent}%`
+    return `0 0 0 ${percent*10}%`
 }
 
 export const translateProvider = (): { x: number, y: number } => {
-    // ほんとはランダムで
     return { x: 300, y: 0 }
 }
 
 export const durationProvider = (): number => {
-    // ほんとはランダムで
     return 0.5
 }
 
-const sampleImgStyle1 = {
-    width: '150px',
-    height: '150px',
-    padding: paddingProvider(),
-    display: 'block'
-}
-const sampleImgStyle2 = {
-    width: '170px',
-    height: '170px',
-    padding: paddingProvider(),
-    display: 'block'
-}
-const sampleImgStyle3 = {
-    width: '200px',
-    height: '200px',
-    padding: paddingProvider(),
-    display: 'block'
-}
-
-const sampleImgStyle4 = {
-    width: '200px',
-    height: '200px',
-    padding: paddingProvider(),
-    display: 'block'
-}
-
-const sampleTextStyle1 = {
-    fontSize: '30px',
-    padding: paddingProvider()
-}
-
-const sampleTextStyle2 = {
-    fontSize: '40px',
-    padding: paddingProvider()
-}
-
-const sampleTextStyle3 = {
-    fontSize: '50px',
-    padding: paddingProvider()
-}
-
-const samplePropsArray: AnimationProps[] = [
-    {
-        id: 511,
-        src: js,
-        imageStyle: sampleImgStyle1,
-        translate: { x: 300, y: 0 },
-        duration: 0.4
-    },
-    {
-        id: 303,
-        text: '323',
-        textStyle: sampleTextStyle3,
-        translate: { x: 400, y: 0 },
-        duration: 0.5
-    },
-    {
-        id: 522,
-        src: ts,
-        imageStyle: sampleImgStyle2,
-        translate: { x: 200, y: 0 },
-        duration: 0.3
-    },
-    {
-        id: 111,
-        text: '131',
-        textStyle: sampleTextStyle1,
-        translate: { x: 300, y: 0 },
-        duration: 0.4
-    },
-    {
-        id: 733,
-        src: vue,
-        imageStyle: sampleImgStyle3,
-        translate: { x: 400, y: 0 },
-        duration: 0.5
-    },
-    {
-        id: 744,
-        src: node,
-        imageStyle: sampleImgStyle4,
-        translate: { x: 200, y: 0 },
-        duration: 0.3
-    },
-    {
-        id: 33,
-        text: '313',
-        textStyle: sampleTextStyle3,
-        translate: { x: 400, y: 0 },
-        duration: 0.5
-    },
-    {
-        id: 611,
-        src: js,
-        imageStyle: sampleImgStyle2,
-        translate: { x: 300, y: 0 },
-        duration: 0.6
-    },
-    {
-        id: 323,
-        text: '343',
-        textStyle: sampleTextStyle3,
-        translate: { x: 400, y: 0 },
-        duration: 0.2
-    },
-    {
-        id: 212,
-        text: '232',
-        textStyle: sampleTextStyle2,
-        translate: { x: 200, y: 0 },
-        duration: 0.5
-    },
-    {
-        id: 622,
-        src: ts,
-        imageStyle: sampleImgStyle1,
-        translate: { x: 200, y: 0 },
-        duration: 0.3
-    },
-    {
-        id: 313,
-        text: '333',
-        textStyle: sampleTextStyle3,
-        translate: { x: 400, y: 0 },
-        duration: 0.3
-    },
-    {
-        id: 131,
-        text: '151',
-        textStyle: sampleTextStyle1,
-        translate: { x: 300, y: 0 },
-        duration: 0.2
-    },
-    {
-        id: 633,
-        src: vue,
-        imageStyle: sampleImgStyle1,
-        translate: { x: 400, y: 0 },
-        duration: 0.6
-    },
-    {
-        id: 644,
-        src: node,
-        imageStyle: sampleImgStyle2,
-        translate: { x: 200, y: 0 },
-        duration: 0.4
-    },
-    {
-        id: 11,
-        text: '111',
-        textStyle: sampleTextStyle1,
-        translate: { x: 300, y: 0 },
-        duration: 0.3
-    },
-    {
-        id: 722,
-        src: ts,
-        imageStyle: sampleImgStyle4,
-        translate: { x: 200, y: 0 },
-        duration: 0.7
-    },
-    {
-        id: 101,
-        text: '121',
-        textStyle: sampleTextStyle1,
-        translate: { x: 300, y: 0 },
-        duration: 0.8
-    },
-    {
-        id: 533,
-        src: vue,
-        imageStyle: sampleImgStyle2,
-        translate: { x: 400, y: 0 },
-        duration: 0.9
-    },
-    {
-        id: 22,
-        text: '212',
-        textStyle: sampleTextStyle2,
-        translate: { x: 200, y: 0 },
-        duration: 0.7
-    }
-]
-
 export type Theme = 'stylish' | 'pop' | 'sick'
 
-// いろんなところで使う
-export const sampleColor = [
+export const themeColor = [
     {
         theme: 'stylish',
         color: ['#F72585', '#B5179E', '#4361EE', '#4895EF']
@@ -268,7 +69,6 @@ export const sampleColor = [
         color: ['black', '#363635', '#595A4A']
     }
 ]
-
 
 export const createBackground = (theme: Theme, a: boolean): string => {
     switch (theme) {
@@ -288,7 +88,7 @@ export const createBackground = (theme: Theme, a: boolean): string => {
 
 const EditAnimate = () => {
     const [text1, setText1] = useState<Text>({
-        id: idProvider(),
+        id: 'text1',
         text: '',
         textStyle: {
             fontSize: '40px',
@@ -301,7 +101,7 @@ const EditAnimate = () => {
         duration: durationProvider()
     })
     const [image1, setImage1] = useState<Image>({
-        id: idProvider(),
+        id: 'image1',
         src: '',
         imageStyle: {
             width: '170px',
@@ -316,7 +116,7 @@ const EditAnimate = () => {
         duration: durationProvider()
     })
     const [text2, setText2] = useState<Text>({
-        id: idProvider(),
+        id: 'text2',
         text: '',
         textStyle: {
             fontSize: '40px',
@@ -329,7 +129,7 @@ const EditAnimate = () => {
         duration: durationProvider()
     })
     const [image2, setImage2] = useState<Image>({
-        id: idProvider(),
+        id: 'image2',
         src: '',
         imageStyle: {
             width: '170px',
@@ -344,7 +144,7 @@ const EditAnimate = () => {
         duration: durationProvider()
     })
     const [text3, setText3] = useState<Text>({
-        id: idProvider(),
+        id: 'text3',
         text: '',
         textStyle: {
             fontSize: '40px',
@@ -357,7 +157,7 @@ const EditAnimate = () => {
         duration: durationProvider()
     })
     const [image3, setImage3] = useState<Image>({
-        id: idProvider(),
+        id: 'image3',
         src: '',
         imageStyle: {
             width: '170px',

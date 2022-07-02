@@ -1,44 +1,9 @@
-import { useContext, createContext, useState, useEffect,useReducer, useMemo, useCallback } from "react"
+import { useContext, createContext, useState, useMemo } from "react"
+import { AnimationProps, Theme, Animation } from '../view/EditAnimate'
 
 type Children = {
     children: React.ReactNode
 }
-
-interface Text {
-    id: number
-    text: string
-    textStyle: {
-        fontSize: string
-        padding: string
-    }
-    translate: {
-        x: number
-        y: number
-    }
-    duration: number
-}
-
-interface Image {
-    id: number
-    src: string
-    imageStyle: {
-        width: string
-        height: string
-        padding: string
-        display: string
-    }
-    translate: {
-        x: number
-        y: number
-    }
-    duration: number
-}
-
-type AnimationProps = Text | Image
-
-type Theme = 'stylish' | 'pop' | 'sick'
-
-export type Animation = 'FadeIn' | 'Parallax'
 
 export type State = {
     configArray: AnimationProps[]
