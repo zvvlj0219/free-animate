@@ -3,6 +3,7 @@ import useAnimateConfig, { localStorageFactory } from '../module/useAnimateConfi
 import { Link } from 'react-router-dom'
 import EditTextArea from '../components/uikit/EditTextArea'
 import EditImageArea from '../components/uikit/EditImageArea'
+import '../scss/editAnimate.scss'
 
 export interface Text {
     id: string
@@ -83,6 +84,16 @@ export const createBackground = (theme: Theme, a: boolean): string => {
             break
         default:
             return ''
+    }
+}
+
+const borderStyle = (el: Theme | Animation | null, text: string): React.CSSProperties | undefined => {
+    if (el === text ) {
+        return {
+            border: '5px solid limegreen'
+        }
+    } else {
+        return undefined
     }
 }
 
@@ -174,9 +185,9 @@ const EditAnimate = () => {
 
     const [preConfig, setPreConfig] = useState<AnimationProps[]>([])
 
-    const [theme, setTheme] = useState<Theme>('stylish')
+    const [theme, setTheme] = useState<Theme | null>(null)
 
-    const [animation, setAnimation] = useState<Animation>('FadeIn')
+    const [animation, setAnimation] = useState<Animation | null>(null)
 
     const { state, updateConfig } = useAnimateConfig()
 
@@ -196,51 +207,78 @@ const EditAnimate = () => {
         localStorageFactory(state)
     }, [state])
 
-    const openPreview = () => {
-        // 簡単なバリデーション
-        // if (state.configArray === []) return alert('configArrayがありません')
-        // if (state.theme === null) return alert('themeがありません')
-        console.log(animation)
-        updateConfig(preConfig, theme, animation)
-    }
+    // const openPreview = () => {
+    //     簡単なバリデーション
+    //     if (state.configArray === []) return alert('configArrayがありません')
+    //     if (state.theme === null) return alert('themeがありません')
+    //     console.log(animation)
+    //     updateConfig(preConfig, theme, animation)
+    // }
 
     return (
         <div className='editAnimate'>
-            <h1>this is editAnimate</h1>
-            <div>
-                <div>
-                    <button onClick={() => handleTheme('stylish')}>STYLISH</button>
-                    <button onClick={() => handleTheme('pop')}>POP</button>
-                    <button onClick={() => handleTheme('sick')}>SICK</button>
+            <div className='form_wrapper'>
+                <div className='edit_theme'>
+                    <h3>Choose Theme</h3>
+                    <div className='button_wrapper'>
+                        <button
+                            className='stylish'
+                            onClick={() => handleTheme('stylish')}
+                            style={borderStyle(theme, 'stylish')}
+                        >
+                            STYLISH
+                        </button>
+                        <button
+                            className='pop'
+                            onClick={() => handleTheme('pop')}
+                            style={borderStyle(theme, 'pop')}
+                        >   
+                            POP
+                        </button>
+                        <button
+                            className='sick'
+                            onClick={() => handleTheme('sick')}
+                            style={borderStyle(theme, 'sick')}
+                        >
+                            SICK
+                        </button>
+                    </div>
                 </div>
-                <div>ここにサンプル背景 {theme}</div>
-                <hr />
-                <div>
-                    <button onClick={() => handleAnimation('FadeIn')}>FadeIn</button>
-                    <button onClick={() => handleAnimation('Parallax')}>Parallax</button>
+                <div className='edit_animation'>
+                    <h3>Choose Animation</h3>
+                    <div className='button_wrapper'>
+                        <button
+                            className='fadein'
+                            onClick={() => handleAnimation('FadeIn')}
+                            style={borderStyle(animation, 'FadeIn')}
+                        >
+                            FadeIn
+                        </button>
+                        <button
+                            className='parallax'
+                            onClick={() => handleAnimation('Parallax')}
+                            style={borderStyle(animation, 'Parallax')}
+                        >
+                            Parallax
+                        </button>
+                    </div>
                 </div>
-                <div>{animation}</div>
-                <hr />
                 <EditTextArea num={1} text={text1} setText={setText1} />
-                <hr />
                 <EditImageArea num={1} image={image1} setImage={setImage1} />
-                <hr />
                 <EditTextArea num={2} text={text2} setText={setText2} />
-                <hr />
                 <EditImageArea num={2} image={image2} setImage={setImage2} />
-                <hr />
                 <EditTextArea num={3} text={text3} setText={setText3} />
-                <hr />
                 <EditImageArea num={3} image={image3} setImage={setImage3} />
             </div>
-            <hr />
-            <Link
-                to='/previewer'
-                target='_blank'
-                onClick={() => openPreview()}
-            >
-                open preview
-            </Link>
+            <div className='link'>
+                <Link
+                    to='/previewer'
+                    target='_blank'
+                    // onClick={() => openPreview()}
+                >
+                    Open Preview
+                </Link>
+            </div>
         </div>
     )
 }
