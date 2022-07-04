@@ -35,18 +35,16 @@ const EditTextArea = ({
     },[])
 
     return (
-        <div className='edittextarea'>
-            <div className='textnumber'>
+        <div className='edit_text_area'>
+            <div className='form_input'>
                 <h3>{`Text ${num}`}</h3>
-            </div>
-            <div>
                 <input
                     type='text'
                     value={text.text}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleText(e)}
                 />
             </div>
-            <div className='formcontrol wrapper'>
+            <div className='form_control_wrapper'>
                 <FormControl>
                     <FormLabel id="radio-buttons-group-label">Size</FormLabel>
                     <RadioGroup
@@ -56,9 +54,42 @@ const EditTextArea = ({
                         value={text.textStyle.fontSize}
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleRadioButton(e)}
                     >
-                        <FormControlLabel value='30px' control={<Radio />} label="Small" />
-                        <FormControlLabel value='40px' control={<Radio />} label="Meddium" />
-                        <FormControlLabel value='50px' control={<Radio />} label="Large" />
+                        <FormControlLabel
+                            value='30px'
+                            control={<Radio
+                                sx={{
+                                    color: 'white',
+                                    '&.Mui-checked': {
+                                      color: '#1976d2',
+                                    },
+                                }}    
+                            />}
+                            label="Small"
+                        />
+                        <FormControlLabel
+                            value='40px'
+                            control={<Radio
+                                sx={{
+                                    color: 'white',
+                                    '&.Mui-checked': {
+                                      color: '#1976d2',
+                                    },
+                                }}    
+                            />}
+                            label="Meddium"
+                        />
+                        <FormControlLabel
+                            value='50px'
+                            control={<Radio
+                                sx={{
+                                    color: 'white',
+                                    '&.Mui-checked': {
+                                      color: '#1976d2',
+                                    },
+                                }}    
+                            />}
+                            label="Large"
+                        />
                     </RadioGroup>
                 </FormControl>
             </div>

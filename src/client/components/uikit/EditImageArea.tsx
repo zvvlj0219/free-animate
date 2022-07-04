@@ -49,29 +49,18 @@ const EditImageArea = ({
     },[])
 
     return (
-        <div className='editimagearea'>
-            <div className='imagenumber'>
-                <h3>{`Image ${num}`}</h3>
-            </div>
+        <div className='edit_image_area'>
             <div className='preview'>
-                <img
-                    // sample style
-                    style={{
-                        width: '170px',
-                        height: 'auto'
-                    }}
-                    src={image.src}
-                    alt=''
-                />
-            </div>
-            <div>
+                <h3>{`Image ${num}`}</h3>
+                <div className='image_container'>
+                    <img
+                        src={image.src}
+                        alt=''
+                    />
+                </div>
                 <form>
                     <label>
-                        <span
-                            style={{
-                                backgroundColor: 'pink'
-                            }}
-                        >select image</span>
+                        <span>select image</span>
                         <input
                             type='file'
                             accept='image/*'
@@ -83,7 +72,7 @@ const EditImageArea = ({
                     </label>
                 </form>
             </div>
-            <div className='formcontrol wrapper'>
+            <div className='form_control_wrapper'>
                 <FormControl>
                     <FormLabel id="radio-buttons-group-label">Size</FormLabel>
                     <RadioGroup
@@ -93,9 +82,42 @@ const EditImageArea = ({
                         value={image.imageStyle.width}
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleRadioButton(e)}
                     >
-                        <FormControlLabel value='150px' control={<Radio />} label="Small" />
-                        <FormControlLabel value="170px" control={<Radio />} label="Meddium" />
-                        <FormControlLabel value="200px" control={<Radio />} label="Large" />
+                        <FormControlLabel
+                            value='150px'
+                            control={<Radio
+                                sx={{
+                                    color: 'white',
+                                    '&.Mui-checked': {
+                                      color: '#1976d2',
+                                    },
+                                }}    
+                            />}
+                            label="Small"
+                        />
+                        <FormControlLabel
+                            value="170px"
+                            control={<Radio
+                                sx={{
+                                    color: 'white',
+                                    '&.Mui-checked': {
+                                      color: '#1976d2',
+                                    },
+                                }}    
+                            />}
+                            label="Meddium"
+                        />
+                        <FormControlLabel
+                            value="200px"
+                            control={<Radio
+                                sx={{
+                                    color: 'white',
+                                    '&.Mui-checked': {
+                                      color: '#1976d2',
+                                    },
+                                }}    
+                            />}
+                            label="Large"
+                        />
                     </RadioGroup>
                 </FormControl>
             </div>

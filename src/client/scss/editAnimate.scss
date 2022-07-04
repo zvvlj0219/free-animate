@@ -1,0 +1,447 @@
+.editAnimate {
+    width: 100%;
+
+    .form_wrapper  {
+        .edit_theme {
+            width: 90%;
+            margin: 40px auto 0;
+            padding-bottom: 30px;
+            border-bottom: 1px solid darkgray;
+
+            .button_wrapper {
+                display: flex;
+                justify-content: space-around;
+
+                > button {
+                    display: block;
+                    width: 150px;
+                    height: 50px;
+                    color: whitesmoke;
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    border-radius: 5px;
+                    border: 1px solid dimgray;
+
+                    &.stylish {
+                        background-color: #4874ef;
+                    }
+
+                    &.pop {
+                        background-color: #F72585;
+                    }
+        
+                    &.sick {
+                        background-color: #5a5c47;
+                    }        
+                }
+            }
+
+            > h3 {
+                color: whitesmoke;
+                padding-left: 30px;
+                font-size: 1.3rem;
+            }
+
+            @media (max-width: 750px) {
+                width: 90%;
+                margin: 30px auto 0;
+
+                .button_wrapper > button {
+                    display: block;
+                    width: 120px;
+                    height: 40px;
+                    font-size: 1rem;
+                }
+
+                > h3 {
+                    font-size: 1.2rem;
+                }    
+            }
+
+            @media (max-width: 500px) {
+                width: 90%;
+                margin: 30px auto 0;
+
+                .button_wrapper > button {
+                    display: block;
+                    width: 100px;
+                    height: 40px;
+                    font-size: 0.9rem;
+                }
+
+                > h3 {
+                    font-size: 1.2rem;
+                    padding-left: 20px;
+                }    
+            }
+
+            @media (max-width: 300px) {
+                width: 90%;
+                margin: 20px auto 0;
+
+                .button_wrapper > button {
+                    display: block;
+                    width: 70px;
+                    height: 40px;
+                    font-size: 0.8rem;
+                }
+                
+                > h3 {
+                    font-size: 1rem;
+                    padding-left: 10px;
+                }    
+            }
+        }
+
+        .edit_animation {
+            width: 90%;
+            margin: 30px auto 0;
+            padding-bottom: 30px;
+            border-bottom: 1px solid darkgray;
+
+            > h3 {
+                color: whitesmoke;
+                padding-left: 30px;
+                font-size: 1.3rem;
+            }
+
+            .button_wrapper {
+                display: flex;
+                justify-content: space-around;
+
+                > button {
+                    display: block;
+                    width: 180px;
+                    height: 70px;
+                    color: whitesmoke;
+                    font-size: 18px;
+                    font-weight: 500;
+                    border-radius: 5px;
+                    border: 1px solid dimgray;
+
+                    &.fadein {
+                        background-color: rgb(70, 190, 230);
+                    }
+        
+                    &.parallax {
+                        background-color: rgb(165, 40, 190);
+                    } 
+                }
+            }
+
+            @media (max-width: 750px) {
+                width: 90%;
+                margin: 30px auto 0;
+
+                .button_wrapper > button {
+                    display: block;
+                    width: 150px;
+                    height: 50px;
+                    font-size: 1rem;
+                }
+
+                > h3 {
+                    font-size: 1.2rem;
+                }    
+            }
+
+            @media (max-width: 500px) {
+                width: 90%;
+                margin: 30px auto 0;
+
+                .button_wrapper > button {
+                    display: block;
+                    width: 130px;
+                    height: 40px;
+                    font-size: 0.9rem;
+                }
+
+                > h3 {
+                    font-size: 1.2rem;
+                    padding-left: 20px;
+                }    
+            }
+
+            @media (max-width: 300px) {
+                width: 90%;
+                margin: 20px auto 0;
+
+                .button_wrapper > button {
+                    display: block;
+                    width: 100px;
+                    height: 30px;
+                    font-size: 0.8rem;
+                }
+                
+                > h3 {
+                    font-size: 1rem;
+                    padding-left: 10px;
+                }    
+            }
+        }
+
+        .edit_text_area {
+            width: 90%;
+            display: flex;
+            margin: 40px auto 0;
+            padding-bottom: 30px;
+            border-bottom: 1px solid darkgray;
+
+            @media (max-width: 950px) {
+                margin: 10px auto 0;
+                flex-direction: column;
+            }
+            
+            .form_input {
+                width: 55%;
+                padding-bottom: 20px;
+
+                > h3 {
+                    color: whitesmoke;
+                    padding-left: 30px;
+                }
+
+                input[type='text'] {
+                    background-color: dimgray;
+                    width: 300px;
+                    height: 30px;
+                    margin-left: 60px;
+                    font-size: 1.1rem;       
+                    color: whitesmoke;
+                    border-radius: 5px;
+                }
+
+                @media (max-width: 750px) {
+                    > h3 {
+                        font-size: 1.2rem;
+                    }
+                }
+
+                @media (max-width: 550px) {
+                    width: 95%;
+
+                    input[type='text'] {
+                        background-color: dimgray;
+                        display: block;
+                        margin: 0 auto;
+                        width: 250px;
+                        height: 30px;
+                        font-size: 1rem;       
+                        color: whitesmoke;
+                        border-radius: 5px;
+                    }
+
+                    > h3 {
+                        font-size: 1.2rem;
+                    }
+                }
+
+                @media (max-width: 350px) {
+                    width: 100%;
+
+                    input[type='text'] {
+                        background-color: dimgray;
+                        display: block;
+                        width: 180px;
+                        height: 20px;
+                        margin: 0 auto;
+                        font-size: 0.9rem;       
+                        color: whitesmoke;
+                        border-radius: 7px;
+                    }
+
+                    > h3 {
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            .form_control_wrapper {
+                border: 2px solid darkgray;
+                width: 45%;
+                height: 30%;
+                border-radius: 5px;
+                padding: 20px 10px;
+
+                div {
+                    display: block;
+
+                    div {
+                        padding: 15px 30px;
+                    }
+
+                    label#radio-buttons-group-label {
+                        color: whitesmoke;
+                        padding: 30px;
+                    }
+    
+                    input[type='radio'] {
+                        border: 1px solid white;
+                    }
+                }
+
+                @media (max-width: 950px) and (min-width: 550px) {
+                    width: 75%;
+                    margin:10px auto;
+                }
+
+                @media (max-width: 550px) {
+                    width: 80%;
+                    margin: 10px auto;
+                }
+
+            }
+        }
+
+        .edit_image_area {
+            width: 90%;
+            display: flex;
+            margin: 40px auto 0;
+            padding-bottom: 30px;
+            border-bottom: 1px solid darkgray;
+
+            @media (max-width: 950px) {
+                margin: 10px auto 0;
+                flex-direction: column;
+            }
+
+            .preview {
+                width: 55%;
+                padding-bottom: 20px;
+
+                > h3 {
+                    color: whitesmoke;
+                    padding-left: 30px;
+                    font-size: 1.3rem;
+                }
+
+                .image_container {
+                    margin-left: 50px;
+
+                    img {
+                        width: 150px;
+                        height: auto;
+                    }
+                }
+
+                form {
+                    width: auto;
+                    margin-top: 10px;
+                    margin-left: 50px;
+
+                    label {
+                        background-color: dimgray;
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                    }
+                }
+
+                @media (max-width: 550px) {
+                    width: 95%;
+
+                    input[type='text'] {
+                        background-color: dimgray;
+                        display: block;
+                        margin: 0 auto;
+                        width: 250px;
+                        height: 30px;
+                        font-size: 1rem;       
+                        color: whitesmoke;
+                        border-radius: 5px;
+                    }
+
+                    > h3 {
+                        font-size: 1.2rem;
+                    }
+                }
+
+                @media (max-width: 350px) {
+                    width: 100%;
+
+                    input[type='text'] {
+                        background-color: dimgray;
+                        display: block;
+                        width: 180px;
+                        height: 20px;
+                        margin: 0 auto;
+                        font-size: 0.9rem;       
+                        color: whitesmoke;
+                        border-radius: 7px;
+                    }
+
+                    > h3 {
+                        font-size: 1rem;
+                    }
+                }
+
+            }
+
+            .form_control_wrapper {
+                border: 2px solid darkgray;
+                width: 45%;
+                height: 30%;
+                border-radius: 5px;
+                padding: 20px 10px;
+
+                div {
+                    display: block;
+
+                    div {
+                        padding: 15px 30px;
+                    }
+
+                    label#radio-buttons-group-label {
+                        color: whitesmoke;
+                        padding: 30px;
+                    }
+    
+                    input[type='radio'] {
+                        border: 1px solid white;
+                    }
+                }
+
+                @media (max-width: 950px) and (min-width: 550px) {
+                    width: 75%;
+                    margin:10px auto;
+                }
+
+                @media (max-width: 550px) {
+                    width: 80%;
+                    margin: 10px auto;
+                }
+
+            }
+        }
+    }
+
+    .link {
+        width: 100%;
+        height: 130px;
+        padding: 20px 0;
+        
+        a {
+            display: block;
+            width: 200px;
+            height: 50px;    
+            margin: 30px auto;
+            text-align: center;
+            color: whitesmoke;
+            border-radius: 5px;
+            line-height: 50px;
+            font-size: 1.1rem;
+            background-color: #4874ef;
+        }
+
+        @media (max-width: 550px) {
+            height: 100px;
+            padding: 10px 0;
+
+            a {
+                width: 150px;
+                height: 35px;
+                font-size: 0.9rem;
+                line-height: 35px;
+            }
+        }
+    }
+}
