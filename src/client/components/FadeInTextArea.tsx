@@ -1,4 +1,4 @@
-import { useRef, useCallback, useEffect, useState } from 'react'
+import React, { useRef, useCallback, useEffect, useState } from 'react'
 import useFadeIn, { getScrollDirection } from './useFadeIn'
 
 type Props = {

@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { Theme, createBackground, AnimationProps } from '../view/EditAnimate'
 import FadeInTextArea from './FadeInTextArea'
 import FadeInImageArea from './FadeInImageArea'
@@ -15,8 +16,7 @@ const FadeIn = ({ configArray, theme }: Props) => (
     <div
         className='fadein'
         style={{
-            backgroundColor: createBackground(theme, true),
-            overflowY: 'hidden'
+            backgroundColor: createBackground(theme, true)
         }}
         id={CONTAINER}
     >

@@ -1,4 +1,4 @@
-import { useRef, useMemo, useCallback, useEffect, useState } from 'react'
+import React, { useRef, useMemo, useCallback, useEffect, useState } from 'react'
 import useFadeIn, { getScrollDirection } from './useFadeIn'
 import { themeColor, Theme } from '../view/EditAnimate'
 import {

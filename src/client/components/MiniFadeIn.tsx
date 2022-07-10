@@ -91,7 +91,7 @@ const getScrollDirection = (
     const currentPosition = scrollTop()
     if (!currentPosition) return
 
-    if (currentPosition > prevPosition ) {
+    if (currentPosition > prevPosition) {
         changeDirection(true)
     } else {
         changeDirection(false)
@@ -194,7 +194,7 @@ const MiniShape = ({ children }: Children) => {
 
     useEffect(() => {
         const containerElm = document.getElementById(CONTAINER)
-        if (!containerElm) return 
+        if (!containerElm) return
         containerElm.addEventListener('scroll', onScroll)
         return () => containerElm.removeEventListener('scroll', onScroll)
     }, [onScroll])
@@ -235,7 +235,7 @@ const MiniFadeInTextArea = ({
 
     useEffect(() => {
         const containerElm = document.getElementById(CONTAINER)
-        if (!containerElm) return 
+        if (!containerElm) return
         containerElm.addEventListener('scroll', onScroll)
         return () => containerElm.removeEventListener('scroll', onScroll)
     }, [onScroll])
@@ -285,7 +285,7 @@ const MiniFadeInImageArea = ({
 
     useEffect(() => {
         const containerElm = document.getElementById(CONTAINER)
-        if (!containerElm) return 
+        if (!containerElm) return
         containerElm.addEventListener('scroll', onScroll)
         return () => containerElm.removeEventListener('scroll', onScroll)
     }, [onScroll])

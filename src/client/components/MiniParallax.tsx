@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { Parallax, IParallax, ParallaxLayer } from '@react-spring/parallax'
 import useWindowSize from '../module/useWindowSize'
 

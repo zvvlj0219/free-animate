@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { AnimationConfigContextProvider } from './module/useAnimateConfig'
 import ContentRouter from './ContentRouter'
@@ -12,7 +12,7 @@ const App = () => {
         display: isPreviewer ? 'none' : ''
     }
 
-    useEffect(() => {   
+    useEffect(() => {
         if (pathname === '/previewer') {
             setIsPreviewer(true)
         } else {
@@ -22,14 +22,15 @@ const App = () => {
 
     return (
         <div className='app'>
-            <div
-                className='header'
-                style={contentStyle}
-            >
+            <div className='header' style={contentStyle}>
                 <h3>Free Animate</h3>
                 <div className='menu'>
-                    <Link to='/' className='link'>Home</Link>
-                    <Link to='/edit_animate' className='link'>Edit Animate</Link>
+                    <Link to='/' className='link'>
+                        Home
+                    </Link>
+                    <Link to='/edit_animate' className='link'>
+                        Edit Animate
+                    </Link>
                 </div>
             </div>
             <AnimationConfigContextProvider>

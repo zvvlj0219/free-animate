@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import useAnimateConfig, { localStorageFactory } from '../module/useAnimateConfig'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import {
+    useAnimateConfig,
+    localStorageFactory
+} from '../module/useAnimateConfig'
 import EditTextArea from '../components/uikit/EditTextArea'
 import EditImageArea from '../components/uikit/EditImageArea'
 import '../scss/editAnimate.scss'
@@ -41,18 +44,17 @@ export type Animation = 'FadeIn' | 'Parallax'
 
 export const paddingProvider = (): string => {
     const min = 1
-    const max = 9
+    const max = 7
     const percent = Math.floor(Math.random() * (max + 1 - min)) + min
-    return `0 0 0 ${percent*10}%`
+    return `0 0 0 ${percent * 10}%`
 }
 
-export const translateProvider = (): { x: number, y: number } => {
-    return { x: 300, y: 0 }
-}
+export const translateProvider = (): { x: number; y: number } => ({
+    x: 300,
+    y: 0
+})
 
-export const durationProvider = (): number => {
-    return 0.5
-}
+export const durationProvider = (): number => 0.5
 
 export type Theme = 'stylish' | 'pop' | 'sick'
 
@@ -87,13 +89,14 @@ export const createBackground = (theme: Theme, a: boolean): string => {
     }
 }
 
-const borderStyle = (el: Theme | Animation | null, text: string): React.CSSProperties | undefined => {
-    if (el === text ) {
+const borderStyle = (
+    el: Theme | Animation | null,
+    text: string
+): React.CSSProperties | undefined => {
+    if (el === text) {
         return {
             border: '5px solid limegreen'
         }
-    } else {
-        return undefined
     }
 }
 
@@ -183,11 +186,13 @@ const EditAnimate = () => {
         duration: durationProvider()
     })
 
-    const [preConfig, setPreConfig] = useState<AnimationProps[]>([])
-
     const [theme, setTheme] = useState<Theme | null>(null)
 
     const [animation, setAnimation] = useState<Animation | null>(null)
+
+    const navigate = useNavigate()
+
+    const [validationMsg, setValidationMsg] = useState<string>('')
 
     const { state, updateConfig } = useAnimateConfig()
 
@@ -200,20 +205,35 @@ const EditAnimate = () => {
     }
 
     useEffect(() => {
-        setPreConfig([text1, image1, text2, image2, text3, image3])
-    }, [text1, image1, text2, image2, text3, image3, theme])
+        if (!theme || !animation) return
+        updateConfig(
+            [text1, image1, text2, image2, text3, image3],
+            theme,
+            animation
+        )
+    }, [
+        updateConfig,
+        text1,
+        image1,
+        text2,
+        image2,
+        text3,
+        image3,
+        theme,
+        animation
+    ])
 
-    useEffect(() => {
-        localStorageFactory(state)
-    }, [state])
+    const openPreview = () => {
+        if (!theme || !animation) {
+            setValidationMsg('No Theme or Animation has been set.')
+        } else {
+            localStorageFactory(state)
 
-    // const openPreview = () => {
-    //     簡単なバリデーション
-    //     if (state.configArray === []) return alert('configArrayがありません')
-    //     if (state.theme === null) return alert('themeがありません')
-    //     console.log(animation)
-    //     updateConfig(preConfig, theme, animation)
-    // }
+            const configArray = [text1, image1, text2, image2, text3, image3]
+            updateConfig(configArray, theme, animation)
+            navigate('/previewer')
+        }
+    }
 
     return (
         <div className='editAnimate'>
@@ -232,7 +252,7 @@ const EditAnimate = () => {
                             className='pop'
                             onClick={() => handleTheme('pop')}
                             style={borderStyle(theme, 'pop')}
-                        >   
+                        >
                             POP
                         </button>
                         <button
@@ -271,13 +291,8 @@ const EditAnimate = () => {
                 <EditImageArea num={3} image={image3} setImage={setImage3} />
             </div>
             <div className='link'>
-                <Link
-                    to='/previewer'
-                    target='_blank'
-                    // onClick={() => openPreview()}
-                >
-                    Open Preview
-                </Link>
+                <h3>{validationMsg}</h3>
+                <button onClick={() => openPreview()}>Open Preview</button>
             </div>
         </div>
     )

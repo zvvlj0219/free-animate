@@ -2,11 +2,11 @@ $primary_blue: rgb(70, 190, 230);
 $primary_pink: rgb(165, 40, 190);
 
 .section.a {
-    width:92%;
+    width: 92%;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(5 ,120px);
-    gap:20px; 
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 120px);
+    gap: 20px;
     margin: 10px auto;
 
     .describe.a {
@@ -20,7 +20,11 @@ $primary_pink: rgb(165, 40, 190);
             div:first-child {
                 padding-left: 30px;
                 display: inline;
-                background: linear-gradient( to right,  $primary_blue 25%, $primary_pink 75% );
+                background: linear-gradient(
+                    to right,
+                    $primary_blue 25%,
+                    $primary_pink 75%
+                );
                 background-clip: text;
                 color: transparent;
                 line-height: 120%;
@@ -59,11 +63,11 @@ $primary_pink: rgb(165, 40, 190);
 }
 
 .section.b {
-    width:92%;
+    width: 92%;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(6 ,110px);
-    gap:20px; 
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 110px);
+    gap: 20px;
     margin: 10px auto;
 
     .describe.b {
@@ -102,7 +106,6 @@ $primary_pink: rgb(165, 40, 190);
         }
     }
 
-
     .mini_parallax {
         h3 {
             line-height: 100%;
@@ -118,9 +121,36 @@ $primary_pink: rgb(165, 40, 190);
     }
 }
 
-// link_button
+.link_button {
+    width: 100%;
+    height: 130px;
 
-// media query
+    a {
+        display: block;
+        width: 200px;
+        height: 50px;
+        margin: 0 auto;
+        text-align: center;
+        color: whitesmoke;
+        border-radius: 5px;
+        line-height: 50px;
+        font-size: 1.1rem;
+        background-color: $primary_pink;
+    }
+
+    @media (max-width: 550px) {
+        height: 100px;
+        padding: 10px 0;
+
+        a {
+            width: 150px;
+            height: 35px;
+            font-size: 0.9rem;
+            line-height: 35px;
+        }
+    }
+}
+
 @media (min-width: 1100px) {
     .section.a,
     .section.b {
@@ -129,45 +159,49 @@ $primary_pink: rgb(165, 40, 190);
     }
 
     .section.a {
-        width:92%;
+        width: 92%;
         display: grid;
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(5 ,120px);
-        gap:20px; 
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 120px);
+        gap: 20px;
         margin: 10px auto;
-    
+
         .describe.a {
             grid-column: 1/ 2;
             grid-row: 1 / 5;
-    
+
             .title {
                 font-size: 6rem;
                 font-weight: 900;
                 z-index: 2;
-    
+
                 div:first-child {
                     padding-left: 30px;
                     display: inline;
-                    background: linear-gradient( to right,  $primary_blue 25%, $primary_pink 75% );
+                    background: linear-gradient(
+                        to right,
+                        $primary_blue 25%,
+                        $primary_pink 75%
+                    );
                     background-clip: text;
                     color: transparent;
                     line-height: 120%;
                 }
-    
+
                 div:last-child {
                     padding-left: 30px;
                     color: whitesmoke;
                     line-height: 100%;
                 }
             }
-    
+
             .commentary {
                 margin-top: 25px;
                 color: whitesmoke;
                 font-size: 1.5rem;
                 z-index: 2;
             }
-    
+
             .link {
                 font-size: 1.3rem;
                 padding-left: 20px;
@@ -176,43 +210,43 @@ $primary_pink: rgb(165, 40, 190);
                 }
             }
         }
-    
+
         .deviceimage {
             grid-column: 2 / 3;
             grid-row: 2 / 6;
         }
     }
-    
+
     .spacer {
         width: 100%;
         height: 30px;
     }
-    
+
     .section.b {
-        width:92%;
+        width: 92%;
         display: grid;
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(6 ,110px);
-        gap:20px; 
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 110px);
+        gap: 20px;
         margin: 10px auto;
-    
+
         .describe.b {
             grid-column: 1 / 3;
             grid-row: 1 / 3;
-    
+
             div:first-child {
                 color: whitesmoke;
                 text-align: center;
                 font-size: 4rem;
                 font-weight: 900;
             }
-    
+
             .commentary {
                 margin-top: 25px;
                 color: whitesmoke;
                 font-size: 1.5rem;
             }
-    
+
             .link {
                 font-size: 1.3rem;
                 padding-left: 20px;
@@ -221,27 +255,26 @@ $primary_pink: rgb(165, 40, 190);
                 }
             }
         }
-    
+
         .mini_fadein {
             grid-column: 1 / 2;
             grid-row: 3 / 6;
             margin: 0 auto;
-    
+
             h3 {
                 line-height: 100%;
                 text-align: center;
                 font-size: 1.5rem;
             }
         }
-    
-    
+
         .mini_parallax {
             h3 {
                 line-height: 100%;
                 text-align: center;
                 font-size: 1.5rem;
             }
-    
+
             div {
                 grid-column: 2 / 3;
                 grid-row: 3 / 6;
@@ -249,7 +282,6 @@ $primary_pink: rgb(165, 40, 190);
             }
         }
     }
-    
 }
 
 @media (max-width: 1100px) and (min-width: 650px) {
@@ -277,7 +309,7 @@ $primary_pink: rgb(165, 40, 190);
         .link {
             font-size: 1.3rem;
         }
-    
+
         .deviceimage {
             margin-left: 20%;
             grid-column: auto;
@@ -327,7 +359,7 @@ $primary_pink: rgb(165, 40, 190);
                 div:first-child {
                     padding-left: 30px;
                 }
-    
+
                 div:last-child {
                     padding-left: 30px;
                 }
@@ -342,7 +374,7 @@ $primary_pink: rgb(165, 40, 190);
         .link {
             font-size: 1.3rem;
         }
-    
+
         .deviceimage {
             margin-left: 20%;
             grid-column: auto;
@@ -394,7 +426,7 @@ $primary_pink: rgb(165, 40, 190);
                 div:first-child {
                     padding-left: 0px;
                 }
-    
+
                 div:last-child {
                     padding-left: 0px;
                 }
@@ -405,7 +437,7 @@ $primary_pink: rgb(165, 40, 190);
             z-index: 2;
             font-size: 1.2rem;
         }
-    
+
         .deviceimage {
             margin-left: 20%;
             grid-column: auto;
@@ -429,7 +461,7 @@ $primary_pink: rgb(165, 40, 190);
             font-size: 1.2rem;
         }
 
-        .link{
+        .link {
             margin-left: 30px;
         }
 
@@ -462,7 +494,7 @@ $primary_pink: rgb(165, 40, 190);
                 div:first-child {
                     padding-left: 0px;
                 }
-    
+
                 div:last-child {
                     padding-left: 0px;
                 }
@@ -481,7 +513,7 @@ $primary_pink: rgb(165, 40, 190);
                 color: $primary_pink;
             }
         }
-    
+
         .deviceimage {
             display: none;
         }
@@ -503,7 +535,7 @@ $primary_pink: rgb(165, 40, 190);
             font-size: 1.2rem;
         }
 
-        .link{
+        .link {
             margin-left: 30px;
         }
 
@@ -515,5 +547,4 @@ $primary_pink: rgb(165, 40, 190);
             grid-row: auto;
         }
     }
-
 }

@@ -1,3 +1,4 @@
+import * as React from 'react'
 import ParallaxShapes from './ParallaxShapes'
 import { Theme } from '../view/EditAnimate'
 

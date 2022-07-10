@@ -71,7 +71,7 @@
               "unnamedComponents": "arrow-function"
             }
         ],
-        // "camelcase": "off",
+        "react/button-has-type": "off",
         "semi": ["error", "never"],
         "no-console": "off",
         "consistent-return": "off"

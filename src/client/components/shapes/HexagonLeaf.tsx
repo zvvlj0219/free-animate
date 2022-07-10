@@ -1,7 +1,7 @@
+import * as React from 'react'
 import HexagonIcon from '@mui/icons-material/Hexagon'
-import { Theme } from '../../view/EditAnimate'
 import { colorProvider, opacityProvider } from '../FadeInShapes'
-import { paddingProvider } from '../../view/EditAnimate'
+import { paddingProvider, Theme } from '../../view/EditAnimate'
 
 type Props = {
     theme: Theme
