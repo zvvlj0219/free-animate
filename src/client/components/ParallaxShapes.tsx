@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { ParallaxLayer } from '@react-spring/parallax'
 import { themeColor, Theme } from '../view/EditAnimate'
 import {

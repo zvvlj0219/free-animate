@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { ParallaxLayer } from '@react-spring/parallax'
 import { PAGES, createOffset, createSpeed } from './ParallaxContainer'
 

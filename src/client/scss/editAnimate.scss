@@ -1,7 +1,7 @@
 .editAnimate {
     width: 100%;
 
-    .form_wrapper  {
+    .form_wrapper {
         .edit_theme {
             width: 90%;
             margin: 40px auto 0;
@@ -27,12 +27,12 @@
                     }
 
                     &.pop {
-                        background-color: #F72585;
+                        background-color: #f72585;
                     }
-        
+
                     &.sick {
                         background-color: #5a5c47;
-                    }        
+                    }
                 }
             }
 
@@ -55,7 +55,7 @@
 
                 > h3 {
                     font-size: 1.2rem;
-                }    
+                }
             }
 
             @media (max-width: 500px) {
@@ -72,7 +72,7 @@
                 > h3 {
                     font-size: 1.2rem;
                     padding-left: 20px;
-                }    
+                }
             }
 
             @media (max-width: 300px) {
@@ -85,11 +85,11 @@
                     height: 40px;
                     font-size: 0.8rem;
                 }
-                
+
                 > h3 {
                     font-size: 1rem;
                     padding-left: 10px;
-                }    
+                }
             }
         }
 
@@ -122,10 +122,10 @@
                     &.fadein {
                         background-color: rgb(70, 190, 230);
                     }
-        
+
                     &.parallax {
                         background-color: rgb(165, 40, 190);
-                    } 
+                    }
                 }
             }
 
@@ -142,7 +142,7 @@
 
                 > h3 {
                     font-size: 1.2rem;
-                }    
+                }
             }
 
             @media (max-width: 500px) {
@@ -159,7 +159,7 @@
                 > h3 {
                     font-size: 1.2rem;
                     padding-left: 20px;
-                }    
+                }
             }
 
             @media (max-width: 300px) {
@@ -172,11 +172,11 @@
                     height: 30px;
                     font-size: 0.8rem;
                 }
-                
+
                 > h3 {
                     font-size: 1rem;
                     padding-left: 10px;
-                }    
+                }
             }
         }
 
@@ -191,7 +191,7 @@
                 margin: 10px auto 0;
                 flex-direction: column;
             }
-            
+
             .form_input {
                 width: 55%;
                 padding-bottom: 20px;
@@ -206,7 +206,7 @@
                     width: 300px;
                     height: 30px;
                     margin-left: 60px;
-                    font-size: 1.1rem;       
+                    font-size: 1.1rem;
                     color: whitesmoke;
                     border-radius: 5px;
                 }
@@ -226,7 +226,7 @@
                         margin: 0 auto;
                         width: 250px;
                         height: 30px;
-                        font-size: 1rem;       
+                        font-size: 1rem;
                         color: whitesmoke;
                         border-radius: 5px;
                     }
@@ -245,7 +245,7 @@
                         width: 180px;
                         height: 20px;
                         margin: 0 auto;
-                        font-size: 0.9rem;       
+                        font-size: 0.9rem;
                         color: whitesmoke;
                         border-radius: 7px;
                     }
@@ -274,7 +274,7 @@
                         color: whitesmoke;
                         padding: 30px;
                     }
-    
+
                     input[type='radio'] {
                         border: 1px solid white;
                     }
@@ -282,14 +282,13 @@
 
                 @media (max-width: 950px) and (min-width: 550px) {
                     width: 75%;
-                    margin:10px auto;
+                    margin: 10px auto;
                 }
 
                 @media (max-width: 550px) {
                     width: 80%;
                     margin: 10px auto;
                 }
-
             }
         }
 
@@ -345,7 +344,7 @@
                         margin: 0 auto;
                         width: 250px;
                         height: 30px;
-                        font-size: 1rem;       
+                        font-size: 1rem;
                         color: whitesmoke;
                         border-radius: 5px;
                     }
@@ -364,7 +363,7 @@
                         width: 180px;
                         height: 20px;
                         margin: 0 auto;
-                        font-size: 0.9rem;       
+                        font-size: 0.9rem;
                         color: whitesmoke;
                         border-radius: 7px;
                     }
@@ -373,7 +372,6 @@
                         font-size: 1rem;
                     }
                 }
-
             }
 
             .form_control_wrapper {
@@ -394,7 +392,7 @@
                         color: whitesmoke;
                         padding: 30px;
                     }
-    
+
                     input[type='radio'] {
                         border: 1px solid white;
                     }
@@ -402,14 +400,13 @@
 
                 @media (max-width: 950px) and (min-width: 550px) {
                     width: 75%;
-                    margin:10px auto;
+                    margin: 10px auto;
                 }
 
                 @media (max-width: 550px) {
                     width: 80%;
                     margin: 10px auto;
                 }
-
             }
         }
     }
@@ -418,11 +415,16 @@
         width: 100%;
         height: 130px;
         padding: 20px 0;
-        
-        a {
+
+        h3 {
+            text-align: center;
+            color: orangered;
+        }
+
+        button {
             display: block;
             width: 200px;
-            height: 50px;    
+            height: 50px;
             margin: 30px auto;
             text-align: center;
             color: whitesmoke;
@@ -435,6 +437,10 @@
         @media (max-width: 550px) {
             height: 100px;
             padding: 10px 0;
+
+            h3 {
+                font-size: 0.9rem;
+            }
 
             a {
                 width: 150px;

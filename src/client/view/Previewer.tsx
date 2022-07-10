@@ -1,11 +1,12 @@
-import FadeIn from "../components/FadeIn"
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import FadeIn from '../components/FadeIn'
 import ParallaxContainer from '../components/ParallaxContainer'
-import { Link } from "react-router-dom"
-import { State } from "../module/useAnimateConfig"
-import { useEffect, useState } from "react"
+import { State } from '../module/useAnimateConfig'
 
 const Previewer = () => {
     const [state, setState] = useState<State | null>(null)
+    const navigate = useNavigate()
 
     useEffect(() => {
         const ANIMATION_STATE = 'animationState'
@@ -17,18 +18,19 @@ const Previewer = () => {
 
     return (
         <div className='previewer'>
-            <div>
-                {
-                    state?.animation === 'FadeIn' && state?.theme 
-                    ? <FadeIn configArray={state.configArray} theme={state.theme} />
-                    : state?.animation === 'Parallax' && state?.theme
-                    ? <ParallaxContainer configArray={state.configArray} theme={state.theme} />
-                    : '...Loading'
-                }
+            {state?.animation === 'FadeIn' && state?.theme && (
+                <FadeIn configArray={state.configArray} theme={state.theme} />
+            )}
+            {state?.animation === 'Parallax' && state?.theme && (
+                <ParallaxContainer
+                    configArray={state.configArray}
+                    theme={state.theme}
+                />
+            )}
+            {!state && '...Loading'}
+            <div className='back_button'>
+                <button onClick={() => navigate('/edit_animate')}>←Back</button>
             </div>
-            <Link to='/edit_animate'>
-                もどる
-            </Link>
         </div>
     )
 }

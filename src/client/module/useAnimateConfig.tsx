@@ -1,4 +1,4 @@
-import { useContext, createContext, useState, useMemo } from "react"
+import React, { useContext, createContext, useState, useMemo } from 'react'
 import { AnimationProps, Theme, Animation } from '../view/EditAnimate'
 
 type Children = {
@@ -11,19 +11,23 @@ export type State = {
     animation: Animation | null
 }
 
-const AnimationConfigContext = createContext({} as {
-    state: State,
-    updateConfig: (configArray: AnimationProps[], theme: Theme, animation: Animation) => void
-})
-
-const initialStateFactory = (initialState?: State): State => {
-    return {
-        configArray: [],
-        theme: null,
-        animation: null,
-        ...initialState
+const AnimationConfigContext = createContext(
+    {} as {
+        state: State
+        updateConfig: (
+            configArray: AnimationProps[],
+            theme: Theme,
+            animation: Animation
+        ) => void
     }
-}
+)
+
+const initialStateFactory = (initialState?: State): State => ({
+    configArray: [],
+    theme: null,
+    animation: null,
+    ...initialState
+})
 
 export const localStorageFactory = (state: State): void => {
     const ANIMATION_STATE = 'animationState'
@@ -33,11 +37,13 @@ export const localStorageFactory = (state: State): void => {
 export const useAnimateConfig = () => useContext(AnimationConfigContext)
 
 export const AnimationConfigContextProvider = ({ children }: Children) => {
-    const [state, setState] = useState<State>(
-        initialStateFactory()
-    )
+    const [state, setState] = useState<State>(initialStateFactory())
 
-    const updateConfig = (_configArray: AnimationProps[], _theme: Theme, _animation: Animation) => {
+    const updateConfig = (
+        _configArray: AnimationProps[],
+        _theme: Theme,
+        _animation: Animation
+    ) => {
         if (_configArray === [] || _theme === null) {
             throw new Error('no exist config array or theme')
         }
@@ -58,7 +64,7 @@ export const AnimationConfigContextProvider = ({ children }: Children) => {
 
     return (
         <AnimationConfigContext.Provider value={value}>
-            { children }
+            {children}
         </AnimationConfigContext.Provider>
     )
 }
