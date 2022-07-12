@@ -18,23 +18,23 @@ class ErrorBoundary extends Component<Props, State> {
         }
     }
 
-    static getDerivedStateFromError(error: Error): State {
+    static getDerivedStateFromError(_error: Error): State {
         // Update state so the next render will show the fallback UI.
         return {
             hasError: true,
-            error
+            error: _error
         }
     }
 
-    componentDidCatch(error: Error): State {
+    componentDidCatch(_error: Error): State {
         this.setState({
             hasError: true,
-            error
+            error: _error
         })
 
         return {
             hasError: true,
-            error
+            error: _error
         }
     }
 
@@ -46,10 +46,10 @@ class ErrorBoundary extends Component<Props, State> {
             window.location.reload()
         }
 
-        if (hasError && process.env.NODE_ENV === ('development' || undefined)) {
+        if (hasError && process.env.NODE_ENV === ('development' || undefined) && error) {
             return (
                 <div>
-                    <h1>!!Error!! Something went wrong. This is fallback UI</h1>
+                    <h1>!!Error!! Something went wrong. by ErrorBoundary</h1>
                     <h3>{error.name}</h3>
                     <h3>{error.message}</h3>
                 </div>
