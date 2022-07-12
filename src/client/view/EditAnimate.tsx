@@ -238,6 +238,11 @@ const EditAnimate = () => {
     return (
         <div className='editAnimate'>
             <div className='form_wrapper'>
+                <div className='describe'>
+                    Please set the animation.<br />
+                    First, select a theme and animation.<br />
+                    Then set your favorite text and image.
+                </div>
                 <div className='edit_theme'>
                     <h3>Choose Theme</h3>
                     <div className='button_wrapper'>

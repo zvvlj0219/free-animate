@@ -65,6 +65,7 @@ const EditImageArea = ({ num, image, setImage }: Props) => {
                         <span>select image</span>
                         <input
                             type='file'
+                            id='select_image_form'
                             accept='image/*'
                             style={{
                                 display: 'none'
