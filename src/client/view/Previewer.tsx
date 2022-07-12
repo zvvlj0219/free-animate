@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import FadeIn from '../components/FadeIn'
+import Fadein from '../components/Fadein'
 import ParallaxContainer from '../components/ParallaxContainer'
 import { State } from '../module/useAnimateConfig'
 
@@ -19,7 +19,7 @@ const Previewer = () => {
     return (
         <div className='previewer'>
             {state?.animation === 'FadeIn' && state?.theme && (
-                <FadeIn configArray={state.configArray} theme={state.theme} />
+                <Fadein configArray={state.configArray} theme={state.theme} />
             )}
             {state?.animation === 'Parallax' && state?.theme && (
                 <ParallaxContainer

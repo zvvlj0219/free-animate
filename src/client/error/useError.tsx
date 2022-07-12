@@ -1,21 +1,24 @@
-import { useContext } from 'react'
+import React, {
+    useContext,
+    createContext,
+    useMemo,
+    useCallback
+} from 'react'
 import { AxiosError } from 'axios'
-import { ErrorContext } from './ErrorContext'
 
-type Message = {
+type ErrorMessage = {
     message: string
 }
 
-const useError = () => {
-    const context = useContext(ErrorContext)
-    const { setHasErrorTrue } = context
-
-    if (context === undefined) {
-        throw new Error(`useError must be used within a ErrorProvider`)
+const ErrorContext = createContext(
+    {} as {
+        customErrorThrow: (error: unknown) => ErrorMessage
     }
+)
 
-    const customErrorThrow = (error: unknown): Message => {
-        const axiosError = error as AxiosError<Message>
+export const ErrorContextProvider = ({ children }: { children: React.ReactNode}) => {
+    const  customErrorThrow = useCallback((error: unknown): ErrorMessage => {
+        const axiosError = error as AxiosError<ErrorMessage>
 
         if (axiosError.response && axiosError.response.status === 400) {
             const { data } = axiosError.response
@@ -30,8 +33,6 @@ const useError = () => {
             console.error(error.name)
             console.error(error.message)
 
-            setHasErrorTrue(error)
-
             return {
                 message: `${error.name}_${error.message}`
             }
@@ -40,12 +41,18 @@ const useError = () => {
         return {
             message: 'uncaught error'
         }
-    }
+    },[])
 
-    return {
-        context,
-        customErrorThrow
-    }
+    const value = useMemo(
+        () => ({
+            customErrorThrow
+        }),
+        [customErrorThrow]
+    )
+
+    return <ErrorContext.Provider value={value}>{ children }</ErrorContext.Provider>
 }
+
+export const useError = () => useContext(ErrorContext)
 
 export default useError

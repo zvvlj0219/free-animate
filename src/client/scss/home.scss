@@ -124,6 +124,7 @@ $primary_pink: rgb(165, 40, 190);
 .link_button {
     width: 100%;
     height: 130px;
+    margin-top: 40px;
 
     a {
         display: block;
@@ -140,13 +141,12 @@ $primary_pink: rgb(165, 40, 190);
 
     @media (max-width: 550px) {
         height: 100px;
-        padding: 10px 0;
 
         a {
             width: 150px;
-            height: 35px;
-            font-size: 0.9rem;
-            line-height: 35px;
+            height: 40px;
+            font-size: 1rem;
+            line-height: 40px;
         }
     }
 }
