@@ -4,8 +4,6 @@ const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin"
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const isDevelopment = process.env.NODE_ENV !== 'production';
-
 module.exports = {
   entry: {
     app: path.resolve(__dirname, "./src/client/index.tsx")
@@ -48,12 +46,6 @@ module.exports = {
         use: [
           {
             loader: "babel-loader",
-            // options: { plugins: ['react-refresh/babel'] }
-            options: {
-              plugins: [
-                isDevelopment && require.resolve('react-refresh/babel')
-              ].filter(Boolean),
-            },
           }
         ]
       },
