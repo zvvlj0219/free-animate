@@ -13,14 +13,17 @@ type Props = {
 }
 
 const EditImageArea = ({ num, image, setImage }: Props) => {
-    const previeImage = useCallback(
-        (file: File) => {
+    const handleImage = useCallback(
+        (event: React.ChangeEvent<HTMLInputElement>) => {
+            const { files } = event.currentTarget
+            if (!files || files?.length === 0) return
+
             const reader = new FileReader()
 
-            reader.readAsDataURL(file)
+            reader.readAsDataURL(files[0])
 
-            reader.onload = (event: ProgressEvent<FileReader>) => {
-                const { target } = event
+            reader.onload = (e: ProgressEvent<FileReader>) => {
+                const { target } = e
                 if (!target) return
                 setImage((_image) => ({
                     ..._image,
@@ -29,15 +32,6 @@ const EditImageArea = ({ num, image, setImage }: Props) => {
             }
         },
         [setImage]
-    )
-
-    const handleImage = useCallback(
-        (event: React.ChangeEvent<HTMLInputElement>) => {
-            const { files } = event.currentTarget
-            if (!files || files?.length === 0) return
-            previeImage(files[0])
-        },
-        [previeImage]
     )
 
     const handleRadioButton = useCallback(
@@ -55,17 +49,21 @@ const EditImageArea = ({ num, image, setImage }: Props) => {
 
     return (
         <div className='edit_image_area'>
-            <div className='preview'>
+            <div className='preview' id={`preview_wrapper_${num}`}>
                 <h3>{`Image ${num}`}</h3>
                 <div className='image_container'>
-                    <img src={image.src} alt='' />
+                    <img
+                        src={image.src}
+                        alt=''
+                        id={`selected_image_area_${num}`}
+                    />
                 </div>
-                <form name='select_image_form'>
-                    <label htmlFor='select_image_form'>
+                <form name={`select_image_form_${num}`}>
+                    <label htmlFor={`select_image_form_${num}`}>
                         <span>select image</span>
                         <input
                             type='file'
-                            id='select_image_form'
+                            id={`select_image_form_${num}`}
                             accept='image/*'
                             style={{
                                 display: 'none'

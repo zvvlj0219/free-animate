@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
     useAnimateConfig,
@@ -194,53 +194,57 @@ const EditAnimate = () => {
 
     const [validationMsg, setValidationMsg] = useState<string>('')
 
-    const { state, updateConfig } = useAnimateConfig()
+    const { updateConfig } = useAnimateConfig()
 
-    const handleTheme = (selectedTheme: Theme) => {
-        setTheme(selectedTheme)
-    }
+    const handleTheme = useCallback(
+        (selectedTheme: Theme) => {
+            setTheme(selectedTheme)
+        },
+        [setTheme]
+    )
 
-    const handleAnimation = (selectAnimation: Animation) => {
-        setAnimation(selectAnimation)
-    }
-
-    useEffect(() => {
-        if (!theme || !animation) return
-        updateConfig(
-            [text1, image1, text2, image2, text3, image3],
-            theme,
-            animation
-        )
-    }, [
-        updateConfig,
-        text1,
-        image1,
-        text2,
-        image2,
-        text3,
-        image3,
-        theme,
-        animation
-    ])
+    const handleAnimation = useCallback(
+        (selectAnimation: Animation) => {
+            setAnimation(selectAnimation)
+        },
+        [setAnimation]
+    )
 
     const openPreview = () => {
         if (!theme || !animation) {
             setValidationMsg('No Theme or Animation has been set.')
-        } else {
-            localStorageFactory(state)
-
-            const configArray = [text1, image1, text2, image2, text3, image3]
-            updateConfig(configArray, theme, animation)
-            navigate('/previewer')
+            return
         }
+
+        if (
+            (!text1.text && !text2.text && !text3.text) ||
+            (!image1.src && !image2.src && !image3.src)
+        ) {
+            setValidationMsg('Please set at least one text and image.')
+            return
+        }
+
+        const configArray = [text1, image1, text2, image2, text3, image3]
+
+        updateConfig(configArray, theme, animation)
+
+        localStorageFactory({
+            configArray,
+            theme,
+            animation
+        })
+
+        navigate('/previewer')
     }
 
     return (
         <div className='editAnimate'>
             <div className='form_wrapper'>
                 <div className='describe'>
-                    Please set the animation.<br />
-                    First, select a theme and animation.<br />
+                    Please set the animation.
+                    <br />
+                    First, select a theme and animation.
+                    <br />
                     Then set your favorite text and image.
                 </div>
                 <div className='edit_theme'>

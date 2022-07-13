@@ -40,20 +40,43 @@ a {
     }
 }
 
-.app .previewer {
-    overflow: hidden;
+.app {
+    .previewer {
+        background-color: #fff;
 
-    .back_button {
-        background-color: rgba(173, 216, 230, 0.7);
-        position: fixed;
-        bottom: 0;
-        width: 100%;
+        .back_button {
+            background-color: rgba(173, 216, 230, 0.7);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
 
-        button {
-            display: block;
-            width: 150px;
-            margin: 20px auto;
-            padding: 5px 10px;
+            button {
+                display: block;
+                width: 150px;
+                margin: 20px auto;
+                padding: 5px 10px;
+            }
         }
+
+        .attention {
+            position: absolute;
+            top: 0;
+            background-color: transparent;
+            font-size: 1.5rem;
+            color: black;
+            text-align: center;
+            padding: 15px 0;
+            width: 100%;
+            height: 0px;
+        }
+
+        #main_container {
+            padding-top: 40px;
+        }
+    }
+
+    .previewer.FadeIn {
+        overflow: hidden;
+        position: relative;
     }
 }

@@ -46,7 +46,11 @@ class ErrorBoundary extends Component<Props, State> {
             window.location.reload()
         }
 
-        if (hasError && process.env.NODE_ENV === ('development' || undefined) && error) {
+        if (
+            hasError &&
+            process.env.NODE_ENV === ('development' || undefined) &&
+            error
+        ) {
             return (
                 <div>
                     <h1>!!Error!! Something went wrong. by ErrorBoundary</h1>

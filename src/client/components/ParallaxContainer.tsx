@@ -29,13 +29,7 @@ export const createSpeed = (isShape: boolean): number => {
 const ParallaxContainer = ({ configArray, theme }: Props) => {
     const parallax = useRef<IParallax>(null)
     return (
-        <div
-            className='parallax_container'
-            style={{
-                width: '100%',
-                height: '100%'
-            }}
-        >
+        <div className='parallax_container'>
             <Parallax
                 ref={parallax}
                 pages={PAGES}
